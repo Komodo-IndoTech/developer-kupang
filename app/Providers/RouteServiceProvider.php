@@ -29,6 +29,13 @@ class RouteServiceProvider extends ServiceProvider
     // protected $namespace = 'App\\Http\\Controllers';
 
     /**
+     * 
+     * namespace untuk controller public
+     * 
+     */
+    private $namespace_public = 'App\\Http\\Controllers\\publics';
+
+    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @return void
@@ -46,6 +53,10 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace_public)
+                ->group(base_path('routes/public/web.php'));
         });
     }
 
