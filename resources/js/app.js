@@ -12,4 +12,7 @@ const app = new Vue({
     router,
     vuetify,
     el: '#app',
+    created(){
+        // this.$vuetify.theme.dark = true
+    }
 });

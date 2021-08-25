@@ -40,7 +40,7 @@ const routerConfig = new VueRouter({
 })
 
 routerConfig.beforeEach(async (to, from, next) => {
-    
+    document.title = to.meta.title || 'Developer Kupang';
 	next()
 })
 
