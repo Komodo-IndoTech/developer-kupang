@@ -1,31 +1,28 @@
 <template>
 	<div>
-		<v-toolbar flat>
-			<v-tabs align-with-title>
-				<v-tab>Blog</v-tab>
-				<v-tab>Event</v-tab>
-				<v-tab>Diarsipkan</v-tab>
-			</v-tabs>
-		</v-toolbar>
-		<v-divider></v-divider>
-		<v-container>
-			
+		<v-container class="py-10">
+			<list-blog-pilihan-public/>
 		</v-container>
 		<v-divider></v-divider>
 		<v-container fluid>
 			<div class="d-grid-blog">
 				<list-blog-public/>
-				<side-kategori-blog-public class="row-1-sm"/>
+				<div class="row-1-sm">
+					<side-kategori-blog-public class="sticky-top" :style="{ top: `${$vuetify.application.top}px` }"/>
+				</div>
 			</div>
 		</v-container>
 	</div>
 </template>
 <script>
-import SideKategoriBlogPublic from '../../../components/public/blog/kategori/SideKategoriBlogPublic.vue'
-import ListBlogPublic from '../../../components/public/blog/list/ListBlogPublic.vue'
+import SideKategoriBlogPublic from '../../../../components/public/blog/kategori/SideKategoriBlogPublic.vue'
+import ListBlogPilihanPublic from '../../../../components/public/blog/list/ListBlogPilihanPublic.vue'
+import ListBlogPublic from '../../../../components/public/blog/list/ListBlogPublic.vue'
 export default {
-  	components: { ListBlogPublic, SideKategoriBlogPublic },
-	
+  	components: { ListBlogPublic, SideKategoriBlogPublic, ListBlogPilihanPublic },
+	created(){
+		console.log(this.$vuetify);
+	}
 }
 </script>
 <style lang="scss" scoped>
