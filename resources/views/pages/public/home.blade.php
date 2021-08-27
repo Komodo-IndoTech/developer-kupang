@@ -43,7 +43,7 @@
 							</v-list-item-title>
 						</v-list-item-content>
 					</v-list-item>
-					<v-list-item link>
+					<v-list-item link :to="{ name: 'forum' }" exact>
 						<v-list-item-icon>
 							<v-icon>mdi-forum-outline</v-icon>
 						</v-list-item-icon>
