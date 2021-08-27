@@ -2,7 +2,7 @@
 	<div>
 		<v-toolbar flat>
 			<v-tabs align-with-title>
-				<v-tab :to="{ name: 'forum' }">Forum</v-tab>
+				<v-tab :to="{ name: 'forum' }">Pertanyaan</v-tab>
 				<v-tab :to="{ name: 'tag' }">Tag</v-tab>
 			</v-tabs>
 		</v-toolbar>

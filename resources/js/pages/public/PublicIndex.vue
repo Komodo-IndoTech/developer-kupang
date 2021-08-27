@@ -7,7 +7,7 @@
 					<v-avatar class="mr-3">
 						<v-img src="/img/dk_logo.png"></v-img>
 					</v-avatar>
-					<v-toolbar-title class="text-xs-center">
+					<v-toolbar-title class="text-xs-center d-none d-lg-block">
 						<span>Developer Kupang</span>
 					</v-toolbar-title>
 					<v-spacer></v-spacer>

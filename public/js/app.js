@@ -27248,9 +27248,11 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _c("v-toolbar-title", { staticClass: "text-xs-center" }, [
-                    _c("span", [_vm._v("Developer Kupang")])
-                  ]),
+                  _c(
+                    "v-toolbar-title",
+                    { staticClass: "text-xs-center d-none d-lg-block" },
+                    [_c("span", [_vm._v("Developer Kupang")])]
+                  ),
                   _vm._v(" "),
                   _c("v-spacer"),
                   _vm._v(" "),
@@ -27761,7 +27763,7 @@ var render = function() {
             { attrs: { "align-with-title": "" } },
             [
               _c("v-tab", { attrs: { to: { name: "forum" } } }, [
-                _vm._v("Forum")
+                _vm._v("Pertanyaan")
               ]),
               _vm._v(" "),
               _c("v-tab", { attrs: { to: { name: "tag" } } }, [_vm._v("Tag")])
