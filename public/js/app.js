@@ -3356,6 +3356,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -3370,6 +3419,40 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         label: 'Terlama',
         value: 'old'
+      }],
+      items: [{
+        id: 1,
+        title: 'Dasar PHP',
+        image: 'https://picsum.photos/200/300',
+        attrs: {
+          'v-bind:style': '{ backgroundImage: "url(" + image + ")" }'
+        },
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
+        date: '12/12/2019',
+        folder: true,
+        category: 'PHP'
+      }, {
+        id: 2,
+        title: 'Tipe Data Javascript',
+        image: 'https://picsum.photos/200/300',
+        attrs: {
+          'v-bind:style': '{ backgroundImage: "url(" + image + ")" }'
+        },
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
+        date: '12/12/2019',
+        folder: false,
+        category: 'Javascript'
+      }, {
+        id: 3,
+        title: 'Dasar Javascript',
+        image: 'https://picsum.photos/200/300',
+        attrs: {
+          'v-bind:style': '{ backgroundImage: "url(" + image + ")" }'
+        },
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
+        date: '12/12/2019',
+        folder: true,
+        category: 'Javascript'
       }]
     };
   },
@@ -29650,178 +29733,360 @@ var render = function() {
     _c(
       "div",
       { staticClass: "d-grid-blog py-5" },
-      _vm._l(10, function(i) {
-        return _c(
-          "v-card",
-          {
-            key: i,
-            staticClass: "shadow",
-            staticStyle: { position: "relative" },
-            attrs: { outlined: "", rounded: "lg" }
-          },
-          [
-            _c("v-img", {
-              staticClass: "fill-height",
-              attrs: {
-                src: "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
-                "aspect-ratio": 6 / 4,
-                "max-height": "150"
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "v-menu",
-              {
+      [
+        _vm._l(_vm.items, function(item) {
+          return _c(
+            "v-card",
+            {
+              key: item.id,
+              staticClass: "shadow",
+              staticStyle: { position: "relative" },
+              attrs: { outlined: "", rounded: "lg" }
+            },
+            [
+              _c("v-img", {
+                staticClass: "fill-height",
                 attrs: {
-                  "nudge-bottom": "10",
-                  "offset-y": "",
-                  left: "",
-                  "min-width": "250",
-                  "content-class": "shadow",
-                  "close-on-content-click": false
-                },
-                scopedSlots: _vm._u(
-                  [
+                  src: item.image,
+                  "aspect-ratio": 6 / 4,
+                  "max-height": "150"
+                }
+              }),
+              _vm._v(" "),
+              item.folder
+                ? _c(
+                    "v-btn",
                     {
-                      key: "activator",
-                      fn: function(ref) {
-                        var attrs = ref.attrs
-                        var on = ref.on
-                        return [
-                          _c(
-                            "v-btn",
-                            _vm._g(
-                              _vm._b(
-                                {
-                                  staticClass: "rounded-lg",
-                                  staticStyle: { top: ".5rem", right: ".5rem" },
-                                  attrs: {
-                                    fab: "",
-                                    small: "",
-                                    light: "",
-                                    elevation: "0",
-                                    absolute: "",
-                                    top: "",
-                                    right: ""
-                                  }
-                                },
-                                "v-btn",
-                                attrs,
-                                false
-                              ),
-                              on
-                            ),
-                            [
-                              _c("v-icon", { attrs: { small: "" } }, [
-                                _vm._v("mdi-dots-vertical")
-                              ])
-                            ],
-                            1
-                          )
-                        ]
+                      staticClass: "rounded-lg transparent-light",
+                      staticStyle: { top: ".5rem", left: ".5rem" },
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        dark: "",
+                        elevation: "0",
+                        absolute: "",
+                        top: "",
+                        left: "",
+                        disabled: ""
                       }
-                    }
-                  ],
-                  null,
-                  true
-                )
-              },
-              [
-                _vm._v(" "),
-                _c(
-                  "v-card",
-                  { attrs: { color: "transparent-light" } },
-                  _vm._l(4, function(i) {
-                    return _c(
-                      "v-list-item",
-                      { key: i },
-                      [
-                        _c("v-list-item-title", [
-                          _vm._v("\n\t\t\t\t\t\t\tHello\n\t\t\t\t\t\t")
-                        ])
-                      ],
-                      1
-                    )
-                  }),
-                  1
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("v-card-text", { staticClass: "font-weight-bold pb-0" }, [
-              _vm._v("\n\t\t\t\tLorem ipsum dolor sit amet.\n\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("v-card-text", { staticClass: "py-1" }, [
-              _vm._v(
-                "\n\t\t\t\tLorem ipsum dolor sit amet consectetur, adipisicing elit.\n\t\t\t"
+                    },
+                    [
+                      _c("v-icon", { attrs: { small: "" } }, [
+                        _vm._v("mdi-checkbox-multiple-blank")
+                      ])
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "v-menu",
+                {
+                  attrs: {
+                    "nudge-bottom": "10",
+                    "offset-y": "",
+                    left: "",
+                    "min-width": "250",
+                    "content-class": "shadow",
+                    "close-on-content-click": false
+                  },
+                  scopedSlots: _vm._u(
+                    [
+                      {
+                        key: "activator",
+                        fn: function(ref) {
+                          var attrs = ref.attrs
+                          var on = ref.on
+                          return [
+                            _c(
+                              "v-btn",
+                              _vm._g(
+                                _vm._b(
+                                  {
+                                    staticClass: "rounded-lg",
+                                    staticStyle: {
+                                      top: ".5rem",
+                                      right: ".5rem"
+                                    },
+                                    attrs: {
+                                      fab: "",
+                                      small: "",
+                                      light: "",
+                                      elevation: "0",
+                                      absolute: "",
+                                      top: "",
+                                      right: ""
+                                    }
+                                  },
+                                  "v-btn",
+                                  attrs,
+                                  false
+                                ),
+                                on
+                              ),
+                              [
+                                _c("v-icon", { attrs: { small: "" } }, [
+                                  _vm._v("mdi-dots-vertical")
+                                ])
+                              ],
+                              1
+                            )
+                          ]
+                        }
+                      }
+                    ],
+                    null,
+                    true
+                  )
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-card",
+                    { attrs: { color: "transparent-light", outlined: "" } },
+                    [
+                      _c(
+                        "v-list-item",
+                        { attrs: { link: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-share")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-list-item-title", [
+                            _vm._v("\n\t\t\t\t\t\t\tBagikan\n\t\t\t\t\t\t")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item",
+                        { attrs: { link: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-star")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-list-item-title", [
+                            _vm._v("\n\t\t\t\t\t\t\tFavorit\n\t\t\t\t\t\t")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item",
+                        { attrs: { link: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-archive")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-list-item-title", [
+                            _vm._v("\n\t\t\t\t\t\t\tArsip\n\t\t\t\t\t\t")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                {
+                  staticClass: "font-weight-bold pb-0",
+                  staticStyle: { "font-size": "110%" }
+                },
+                [_vm._v("\n\t\t\t\t" + _vm._s(item.title) + "\n\t\t\t")]
+              ),
+              _vm._v(" "),
+              _c("v-card-text", { staticClass: "py-1" }, [
+                _vm._v("\n\t\t\t\t" + _vm._s(item.content) + "\n\t\t\t")
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                { staticClass: "py-0" },
+                [
+                  _c(
+                    "v-chip",
+                    {
+                      attrs: {
+                        small: "",
+                        color: "blue lighten-5",
+                        light: "",
+                        label: ""
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n\t\t\t\t\t" + _vm._s(item.category) + "\n\t\t\t\t"
+                      )
+                    ]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                { staticClass: "pt-0 d-flex justify-space-between" },
+                [
+                  _c("div", [
+                    _c("div", { staticClass: "flex-middle" }, [
+                      _c(
+                        "div",
+                        [
+                          _c(
+                            "v-icon",
+                            { attrs: { small: "", color: "yellow darken-2" } },
+                            [_vm._v("mdi-star")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-icon",
+                            { attrs: { small: "", color: "yellow darken-2" } },
+                            [_vm._v("mdi-star")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-icon",
+                            { attrs: { small: "", color: "yellow darken-2" } },
+                            [_vm._v("mdi-star")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-icon",
+                            { attrs: { small: "", color: "grey" } },
+                            [_vm._v("mdi-star")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-icon",
+                            { attrs: { small: "", color: "grey" } },
+                            [_vm._v("mdi-star")]
+                          )
+                        ],
+                        1
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    [
+                      _c(
+                        "v-btn",
+                        { attrs: { icon: "" } },
+                        [
+                          _c("v-icon", { attrs: { small: "" } }, [
+                            _vm._v("mdi-message-outline")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ]
               )
-            ]),
-            _vm._v(" "),
-            _c(
-              "v-card-text",
-              { staticClass: "pt-0 d-flex justify-space-between" },
-              [
-                _c("div", [
-                  _c("div", { staticClass: "flex-middle" }, [
+            ],
+            1
+          )
+        }),
+        _vm._v(" "),
+        _vm._l(3, function(i) {
+          return _c(
+            "v-card",
+            {
+              key: "placeholder-" + i,
+              staticClass: "shadow",
+              staticStyle: { position: "relative" },
+              attrs: { outlined: "", rounded: "lg" }
+            },
+            [
+              _c("v-skeleton-loader", {
+                attrs: { height: "150", width: "100%", type: "image" }
+              }),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                { staticClass: "pb-1" },
+                [
+                  _c("v-skeleton-loader", {
+                    attrs: { width: "100%", type: "text" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                { staticClass: "py-1" },
+                [
+                  _c("v-skeleton-loader", {
+                    attrs: { width: "100%", type: "text@2" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                { staticClass: "py-0" },
+                [
+                  _c("v-skeleton-loader", {
+                    attrs: { width: "100%", "max-width": "50", type: "text" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                { staticClass: "pt-0 d-flex justify-space-between" },
+                [
+                  _c("div", [
                     _c(
                       "div",
+                      { staticClass: "flex-middle" },
                       [
-                        _c(
-                          "v-icon",
-                          { attrs: { small: "", color: "yellow darken-2" } },
-                          [_vm._v("mdi-star")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-icon",
-                          { attrs: { small: "", color: "yellow darken-2" } },
-                          [_vm._v("mdi-star")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-icon",
-                          { attrs: { small: "", color: "yellow darken-2" } },
-                          [_vm._v("mdi-star")]
-                        ),
-                        _vm._v(" "),
-                        _c("v-icon", { attrs: { small: "", color: "grey" } }, [
-                          _vm._v("mdi-star")
-                        ]),
-                        _vm._v(" "),
-                        _c("v-icon", { attrs: { small: "", color: "grey" } }, [
-                          _vm._v("mdi-star")
-                        ])
+                        _c("v-skeleton-loader", {
+                          attrs: { width: "100", type: "text" }
+                        })
                       ],
                       1
                     )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  [
-                    _c(
-                      "v-btn",
-                      { attrs: { icon: "" } },
-                      [
-                        _c("v-icon", { attrs: { small: "" } }, [
-                          _vm._v("mdi-message-outline")
-                        ])
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ]
-            )
-          ],
-          1
-        )
-      }),
-      1
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    [
+                      _c("v-skeleton-loader", {
+                        attrs: { width: "24", height: "24", type: "image" }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              )
+            ],
+            1
+          )
+        })
+      ],
+      2
     )
   ])
 }
