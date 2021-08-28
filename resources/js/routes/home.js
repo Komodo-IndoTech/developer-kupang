@@ -16,6 +16,10 @@ import PublicForum from '../pages/public/forum/ForumPublic.vue'
 import ForumIndex from '../pages/public/forum/forum/ForumIndex.vue'
 import TagsIndex from '../pages/public/forum/tags/TagsIndex.vue'
 
+import PublicTutorial from '../pages/public/forum/tutorial/TutorialPublic.vue'
+import TutorialIndex from '../pages/public/forum/tutorial/tutorial/TutorialIndex.vue'
+import RequestIndex from '../pages/public/forum/tutorial/request/RequestIndex.vue'
+
 export default [
 	{
 		path: '/',
@@ -34,7 +38,7 @@ export default [
 				component: PublicBlog,
 				children: [
 					{
-						path: '/event',
+						path: 'event',
 						component: EventIndex,
 						name: 'event',
 						meta: {
@@ -56,7 +60,29 @@ export default [
 				component: PublicForum,
 				children: [
 					{
-						path: '/tag',
+						path: 'tutorial',
+						component: PublicTutorial,
+						children: [
+							{
+								path: 'permintaan',
+								component: RequestIndex,
+								name: 'permintaan',
+								meta: {
+									title: 'Developer Kupang - Tutorial'
+								}
+							},
+							{
+								path: '',
+								component: TutorialIndex,
+								name: 'tutorial',
+								meta: {
+									title: 'Developer Kupang - Tutorial'
+								}
+							},
+						]
+					},
+					{
+						path: 'tag',
 						component: TagsIndex,
 						name: 'tag',
 						meta: {

@@ -23,7 +23,7 @@
 							</v-list-item-title>
 						</v-list-item-content>
 					</v-list-item>
-					<v-list-item link :to="{ name: 'mengenai' }" exact>
+					<v-list-item link :to="{ name: 'mengenai' }">
 						<v-list-item-icon>
 							<v-icon>mdi-account-group-outline</v-icon>
 						</v-list-item-icon>
@@ -33,7 +33,7 @@
 							</v-list-item-title>
 						</v-list-item-content>
 					</v-list-item>
-					<v-list-item link :to="{ name: 'blog' }" exact>
+					<v-list-item link :to="{ name: 'blog' }">
 						<v-list-item-icon>
 							<v-icon>mdi-newspaper-variant-outline</v-icon>
 						</v-list-item-icon>
@@ -43,7 +43,7 @@
 							</v-list-item-title>
 						</v-list-item-content>
 					</v-list-item>
-					<v-list-item link :to="{ name: 'forum' }" exact>
+					<v-list-item link :to="{ name: 'forum' }">
 						<v-list-item-icon>
 							<v-icon>mdi-forum-outline</v-icon>
 						</v-list-item-icon>
