@@ -14,9 +14,7 @@
 				</v-tabs>
 			</v-container>
 		</v-card>
-		<v-container fluid>
-			<router-view></router-view>
-		</v-container>
+		<router-view></router-view>
 	</div>
 </template>
 <script>
