@@ -41,6 +41,12 @@
   z-index: 1;
 }
 
+.sticky-bottom {
+  position: sticky !important;
+  bottom: 0;
+  z-index: 1;
+}
+
 .v-application .glass {
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)) !important;
   -webkit-backdrop-filter: blur(10px);
@@ -50,7 +56,27 @@
 .shadow {
   box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.015) !important;
 }
+.shadow-md {
+  box-shadow: 0px 2rem 3rem rgba(0, 0, 0, 0.05) !important;
+}
+.shadow-lg {
+  box-shadow: 0px 2rem 4rem rgba(0, 0, 0, 0.15) !important;
+}
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+.overlay.blur:hover {
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
