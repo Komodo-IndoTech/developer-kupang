@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<v-app-bar app class="back-color" flat fixed :color="$vuetify.theme.dark ? null : 'transparent-light'">
+		<v-app-bar app class="back-color" flat fixed :color="$vuetify.theme.dark ? null : 'transparent-light'" clipped-right hide-on-scroll>
 			<div class="w-100 d-flex align-center" style="width: 100%">
 				<v-container class="py-0 fill-height text-center mx-auto">
 					<v-app-bar-nav-icon class="mr-2 x-small" v-if="$vuetify.breakpoint.smAndDown" @click=""></v-app-bar-nav-icon>

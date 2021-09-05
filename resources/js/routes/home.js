@@ -18,6 +18,7 @@ import TagsIndex from '../pages/public/forum/tags/TagsIndex.vue'
 
 import PublicTutorial from '../pages/public/forum/tutorial/TutorialPublic.vue'
 import TutorialIndex from '../pages/public/forum/tutorial/tutorial/TutorialIndex.vue'
+import TutorialInfo from '../pages/public/forum/tutorial/tutorial/TutorialInfo.vue'
 import RequestIndex from '../pages/public/forum/tutorial/request/RequestIndex.vue'
 
 export default [
@@ -98,6 +99,14 @@ export default [
 						}
 					},
 				]
+			},
+			{
+				path: 'forum/tutorial/:id_tutorial',
+				component: TutorialInfo,
+				name: 'tutorial.show',
+				meta: {
+					title: 'Developer Kupang - Tutorial #'
+				}
 			},
 			{
 				path: '',

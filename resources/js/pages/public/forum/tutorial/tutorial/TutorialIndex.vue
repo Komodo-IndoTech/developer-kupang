@@ -1,89 +1,91 @@
 <template>
 	<div>
-		<div class="d-flex mb-5">
-			<div class="mr-2">
-				<div class="d-flex flex-column justify-space-between fill-height">
-					<v-subheader class="px-0 pb-0">
-						Urutkan berdasarkan
-					</v-subheader>
-					<v-select
-						v-model="sort"
-						:items="sortItems"
-						label="Urutkan"
-						value="value"
-						item-text="label"
-						item-value="value"
-						outlined
-						class="mt-2"
-						hide-details/>
+		<v-container>
+			<div class="d-flex mb-5">
+				<div class="mr-2">
+					<div class="d-flex flex-column justify-space-between fill-height">
+						<v-subheader class="px-0 pb-0">
+							Urutkan berdasarkan
+						</v-subheader>
+						<v-select
+							v-model="sort"
+							:items="sortItems"
+							label="Urutkan"
+							value="value"
+							item-text="label"
+							item-value="value"
+							outlined
+							class="mt-2"
+							hide-details/>
+					</div>
 				</div>
-			</div>
-			<div class="mr-2 d-none d-lg-block">
-				<div class="d-flex flex-column justify-space-between fill-height">
-					<v-subheader class="px-0 pb-0">
-						Filter berdasarkan
-					</v-subheader>
-					<v-select
-						v-model="sort"
-						:items="sortItems"
-						label="Filter"
-						value="value"
-						item-text="label"
-						item-value="value"
-						outlined
-						class="mt-2"
-						hide-details/>
+				<div class="mr-2 d-none d-lg-block">
+					<div class="d-flex flex-column justify-space-between fill-height">
+						<v-subheader class="px-0 pb-0">
+							Filter berdasarkan
+						</v-subheader>
+						<v-select
+							v-model="sort"
+							:items="sortItems"
+							label="Filter"
+							value="value"
+							item-text="label"
+							item-value="value"
+							outlined
+							class="mt-2"
+							hide-details/>
+					</div>
 				</div>
-			</div>
-			<div class="mr-2 d-none d-lg-block">
-				<div class="d-flex flex-column justify-space-between fill-height">
-					<v-subheader class="px-0 pb-0">
-					</v-subheader>
-					<v-select
-						v-model="sort"
-						:items="sortItems"
-						label="Progress"
-						value="value"
-						item-text="label"
-						item-value="value"
-						outlined
-						class="mt-2"
-						hide-details/>
+				<div class="mr-2 d-none d-lg-block">
+					<div class="d-flex flex-column justify-space-between fill-height">
+						<v-subheader class="px-0 pb-0">
+						</v-subheader>
+						<v-select
+							v-model="sort"
+							:items="sortItems"
+							label="Progress"
+							value="value"
+							item-text="label"
+							item-value="value"
+							outlined
+							class="mt-2"
+							hide-details/>
+					</div>
 				</div>
-			</div>
-			<div class="mr-2 d-none d-lg-block">
-				<div class="d-flex flex-column justify-space-between fill-height">
-					<v-subheader class="px-0 pb-0">
-					</v-subheader>
-					<div class="grow">
-						<div class="d-flex flex-column justify-center fill-height">
-							<v-btn text class="text-capitalize">
-								Reset
-							</v-btn>
+				<div class="mr-2 d-none d-lg-block">
+					<div class="d-flex flex-column justify-space-between fill-height">
+						<v-subheader class="px-0 pb-0">
+						</v-subheader>
+						<div class="grow">
+							<div class="d-flex flex-column justify-center fill-height">
+								<v-btn text class="text-capitalize">
+									Reset
+								</v-btn>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="ml-auto">
-				<div class="d-flex flex-column justify-space-between fill-height">
-					<v-subheader class="px-0 pb-0">
-					</v-subheader>
-					<div class="grow">
-						<div class="d-flex flex-column justify-center fill-height">
-							<div class="d-flex">
-								<v-text-field
-									v-model="search"
-									label="Cari"
-									outlined
-									class="mt-2"
-									hide-details
-									append-outer-icon="mdi-magnify"/>
+				<div class="ml-auto">
+					<div class="d-flex flex-column justify-space-between fill-height">
+						<v-subheader class="px-0 pb-0">
+						</v-subheader>
+						<div class="grow">
+							<div class="d-flex flex-column justify-center fill-height">
+								<div class="d-flex">
+									<v-text-field
+										v-model="search"
+										label="Cari"
+										outlined
+										class="mt-2"
+										hide-details
+										append-outer-icon="mdi-magnify"/>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</v-container>
 		<div class="d-grid-blog py-5">
 			<v-card v-for="item in items" :key="item.id" class="shadow" outlined rounded="lg" style="position: relative">
 				<v-img
@@ -127,7 +129,7 @@
 						</v-list-item>
 					</v-card>
 				</v-menu>
-				<v-card-text class="font-weight-bold pb-0" style="font-size: 110%">
+				<v-card-text class="font-weight-bold pb-0" style="font-size: 110%; cursor: pointer;" @click="$router.push({ name: 'tutorial.show', params: { id_tutorial: item.id } })">
 					{{ item.title }}
 				</v-card-text>
 				<v-card-text class="py-1">
