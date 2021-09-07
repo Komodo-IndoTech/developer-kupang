@@ -3310,6 +3310,46 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/steps/item/StepItemListTemplate.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/steps/item/StepItemListTemplate.vue?vue&type=script&lang=js& ***!
@@ -4555,6 +4595,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_public_forum_tutorial_comments_sidebar_TutorialCommentSidebar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue */ "./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue");
 /* harmony import */ var _components_public_forum_tutorial_steps_item_StepItemList_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../components/public/forum/tutorial/steps/item/StepItemList.vue */ "./resources/js/components/public/forum/tutorial/steps/item/StepItemList.vue");
+/* harmony import */ var _components_public_forum_tutorial_steps_item_StepItemListPlaceholder_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue */ "./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue");
 //
 //
 //
@@ -4635,12 +4676,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     StepItemList: _components_public_forum_tutorial_steps_item_StepItemList_vue__WEBPACK_IMPORTED_MODULE_1__.default,
-    TutorialCommentSidebar: _components_public_forum_tutorial_comments_sidebar_TutorialCommentSidebar_vue__WEBPACK_IMPORTED_MODULE_0__.default
+    TutorialCommentSidebar: _components_public_forum_tutorial_comments_sidebar_TutorialCommentSidebar_vue__WEBPACK_IMPORTED_MODULE_0__.default,
+    StepItemListPlaceholder: _components_public_forum_tutorial_steps_item_StepItemListPlaceholder_vue__WEBPACK_IMPORTED_MODULE_2__.default
   },
   data: function data() {
     return {
@@ -5394,7 +5442,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".d-grid-blog[data-v-5000a427] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  grid-gap: 1rem;\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n  grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n  grid-column-end: span 2;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n  grid-column-end: span 3;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n  grid-column-end: span 4;\n}\n@media screen and (max-width: 830px) {\n.d-grid-blog[data-v-5000a427] {\n    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n}\n.tutorial-comment-container[data-v-5000a427] {\n  transition: top 0.2s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427] {\n  height: 100%;\n  overflow-y: auto;\n  overflow-x: hidden !important;\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427]::-webkit-scrollbar {\n  width: 0.5rem;\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427]::-webkit-scrollbar-thumb {\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  background: rgba(0, 0, 0, 0);\n  border-radius: 5px;\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427]:hover::-webkit-scrollbar-thumb {\n  background: rgba(0, 0, 0, 0.25);\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".d-grid-blog[data-v-5000a427] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  grid-gap: 1rem;\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n  grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n  grid-column-end: span 2;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n  grid-column-end: span 3;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n  grid-column-end: span 4;\n}\n@media screen and (max-width: 830px) {\n.d-grid-blog[data-v-5000a427] {\n    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n}\n.tutorial-comment-container[data-v-5000a427] {\n  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427] {\n  height: 100%;\n  overflow-y: auto;\n  overflow-x: hidden !important;\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427]::-webkit-scrollbar {\n  width: 0.5rem;\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427]::-webkit-scrollbar-thumb {\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  background: rgba(0, 0, 0, 0);\n  border-radius: 5px;\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427]:hover::-webkit-scrollbar-thumb {\n  background: rgba(0, 0, 0, 0.25);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28259,6 +28307,45 @@ component.options.__file = "resources/js/components/public/forum/tutorial/steps/
 
 /***/ }),
 
+/***/ "./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _StepItemListPlaceholder_vue_vue_type_template_id_01d234ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StepItemListPlaceholder.vue?vue&type=template&id=01d234ca& */ "./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=template&id=01d234ca&");
+/* harmony import */ var _StepItemListPlaceholder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StepItemListPlaceholder.vue?vue&type=script&lang=js& */ "./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _StepItemListPlaceholder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _StepItemListPlaceholder_vue_vue_type_template_id_01d234ca___WEBPACK_IMPORTED_MODULE_0__.render,
+  _StepItemListPlaceholder_vue_vue_type_template_id_01d234ca___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/public/forum/tutorial/steps/item/StepItemListTemplate.vue":
 /*!*******************************************************************************************!*\
   !*** ./resources/js/components/public/forum/tutorial/steps/item/StepItemListTemplate.vue ***!
@@ -29029,6 +29116,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StepItemListPlaceholder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./StepItemListPlaceholder.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StepItemListPlaceholder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/public/forum/tutorial/steps/item/StepItemListTemplate.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************!*\
   !*** ./resources/js/components/public/forum/tutorial/steps/item/StepItemListTemplate.vue?vue&type=script&lang=js& ***!
@@ -29613,6 +29716,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StepItemListHeadAction_vue_vue_type_template_id_4d23c5af___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StepItemListHeadAction_vue_vue_type_template_id_4d23c5af___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./StepItemListHeadAction.vue?vue&type=template&id=4d23c5af& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/steps/item/StepItemListHeadAction.vue?vue&type=template&id=4d23c5af&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=template&id=01d234ca&":
+/*!*****************************************************************************************************************************!*\
+  !*** ./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=template&id=01d234ca& ***!
+  \*****************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StepItemListPlaceholder_vue_vue_type_template_id_01d234ca___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StepItemListPlaceholder_vue_vue_type_template_id_01d234ca___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StepItemListPlaceholder_vue_vue_type_template_id_01d234ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./StepItemListPlaceholder.vue?vue&type=template&id=01d234ca& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=template&id=01d234ca&");
 
 
 /***/ }),
@@ -31644,15 +31764,118 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "fill-height grow-1" }, [
-     false
-      ? 0
-      :  true
+     true
       ? _c(
           "div",
-          _vm._l(3, function(i) {
-            return _c("tutorial-comment-item-placeholder", { key: i })
-          }),
-          1
+          [
+            _vm._l(_vm.items, function(item) {
+              return _c("tutorial-comment-item", {
+                key: item.id,
+                attrs: { value: item },
+                scopedSlots: _vm._u(
+                  [
+                    item.replies && item.replies.length
+                      ? {
+                          key: "default",
+                          fn: function() {
+                            return _vm._l(item.replies, function(reply) {
+                              return _c("tutorial-comment-item", {
+                                key: reply.id,
+                                attrs: { value: reply }
+                              })
+                            })
+                          },
+                          proxy: true
+                        }
+                      : null,
+                    item.quote
+                      ? {
+                          key: "quote",
+                          fn: function() {
+                            return [
+                              _c(
+                                "div",
+                                { staticClass: "mt-2" },
+                                [
+                                  _c(
+                                    "step-item-list",
+                                    {
+                                      staticClass: "rounded-xl",
+                                      staticStyle: {
+                                        "max-height": "150px",
+                                        overflow: "hidden",
+                                        position: "relative"
+                                      },
+                                      attrs: { value: item.quote, simple: "" }
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "overlay flex-middle" },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: { icon: "", dark: "" },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.$vuetify.goTo(
+                                                    "#step-" + item.quote.id,
+                                                    {
+                                                      duration: 500,
+                                                      offset: 80
+                                                    }
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c("v-icon", [
+                                                _vm._v("mdi-reply")
+                                              ])
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          },
+                          proxy: true
+                        }
+                      : null
+                  ],
+                  null,
+                  true
+                )
+              })
+            }),
+            _vm._v(" "),
+            _c(
+              "v-card",
+              {
+                staticClass: "text-center",
+                attrs: {
+                  rounded: "xl",
+                  flat: "",
+                  color: "grey lighten-5",
+                  link: ""
+                }
+              },
+              [
+                _c("v-card-text", [
+                  _vm._v("\n\t\t\t\tKomentar lainnya\n\t\t\t")
+                ])
+              ],
+              1
+            )
+          ],
+          2
         )
       : 0
   ])
@@ -32295,6 +32518,104 @@ var render = function() {
       )
     ],
     2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=template&id=01d234ca&":
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue?vue&type=template&id=01d234ca& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-card",
+        { staticClass: "mb-2 mb-lg-10 shadow", attrs: { rounded: "xl" } },
+        [
+          _c(
+            "div",
+            { staticClass: "d-flex justify-space-between w-100" },
+            [
+              _c(
+                "v-card-text",
+                [
+                  _c("v-skeleton-loader", {
+                    attrs: { type: "heading", width: "300" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                { staticClass: "d-flex justify-end" },
+                [
+                  _c("v-skeleton-loader", {
+                    attrs: { type: "text", width: "12" }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-card-text",
+            [_c("v-skeleton-loader", { attrs: { type: "paragraph" } })],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "d-flex justify-space-between w-100" },
+            [
+              _c(
+                "v-card-text",
+                [
+                  _c("v-skeleton-loader", {
+                    attrs: { type: "text", width: "12" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                { staticClass: "d-flex justify-end" },
+                [
+                  _c("v-skeleton-loader", {
+                    attrs: { type: "text", width: "12" }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -35224,7 +35545,14 @@ var render = function() {
                               [
                                 _c(
                                   "v-btn",
-                                  { attrs: { icon: "" } },
+                                  {
+                                    attrs: { icon: "" },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.comments = true
+                                      }
+                                    }
+                                  },
                                   [
                                     _c("v-icon", [
                                       _vm._v("mdi-comment-outline")
@@ -35280,10 +35608,14 @@ var render = function() {
                 "margin-top": _vm.$vuetify.breakpoint.mobile ? null : null
               }
             },
-            _vm._l(_vm.item.steps, function(step, i) {
-              return _c("step-item-list", { key: i, attrs: { value: step } })
-            }),
-            1
+            [
+               false
+                ? 0
+                : _vm._l(4, function(i) {
+                    return _c("step-item-list-placeholder", { key: i })
+                  })
+            ],
+            2
           )
         ]
       ),

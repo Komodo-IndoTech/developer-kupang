@@ -1,6 +1,6 @@
 <template>
 	<div class="fill-height grow-1">
-		<div v-if="false">
+		<div v-if="true">
 			<tutorial-comment-item v-for="item in items" :key="item.id" :value="item">
 				<template v-if="item.replies && item.replies.length" #default>
 					<tutorial-comment-item v-for="reply in item.replies" :key="reply.id" :value="reply"/>
@@ -23,7 +23,7 @@
 				</v-card-text>
 			</v-card>
 		</div>
-		<div v-else-if="true">
+		<div v-else-if="false">
 			<tutorial-comment-item-placeholder v-for="i in 3" :key="i"/>
 		</div>
 		<div v-else class="fill-height pa-lg-5 d-flex flex-column justify-center">

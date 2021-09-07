@@ -50,7 +50,7 @@
 							<div class="pl-3">
 								<div class="content-middle">
 									<v-badge content="9+" offset-x="14" offset-y="12" color="grey" class="mr-5">
-										<v-btn icon>
+										<v-btn icon @click="comments = true">
 											<v-icon>mdi-comment-outline</v-icon>
 										</v-btn>
 									</v-badge>
@@ -71,7 +71,12 @@
 				<v-divider></v-divider>
 			</div>
 			<div class="pa-lg-10 pa-2" :style="{'margin-top': $vuetify.breakpoint.mobile ? null : null}">
-				<step-item-list v-for="(step, i) in item.steps" :key="i" :value="step"/>
+				<template v-if="false">
+					<step-item-list v-for="(step, i) in item.steps" :key="i" :value="step"/>
+				</template>
+				<template v-else>
+					<step-item-list-placeholder v-for="i in 4" :key="i"/>
+				</template>
 			</div>
 		</v-container>
 		<!-- comments -->
@@ -81,8 +86,9 @@
 <script>
 import TutorialCommentSidebar from '../../../../../components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue'
 import StepItemList from '../../../../../components/public/forum/tutorial/steps/item/StepItemList.vue'
+import StepItemListPlaceholder from '../../../../../components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue'
 export default {
- 	components: { StepItemList, TutorialCommentSidebar },
+ 	components: { StepItemList, TutorialCommentSidebar, StepItemListPlaceholder },
 	data() {
 		return {
 			comments: true,
@@ -260,7 +266,8 @@ export default {
 	}
 	.tutorial-comment-container{
 
-		transition: top .2s cubic-bezier(.4,0,.2,1), max-height .2s cubic-bezier(.4,0,.2,1);
+		transition: all .2s cubic-bezier(.4,0,.2,1);
+			// , max-height .2s cubic-bezier(.4,0,.2,1);
 
 		.tutorial-comment{
 			height: 100%;
