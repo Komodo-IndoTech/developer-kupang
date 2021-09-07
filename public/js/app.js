@@ -5266,7 +5266,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".d-grid-blog[data-v-5000a427] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  grid-gap: 1rem;\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n  grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n  grid-column-end: span 2;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n  grid-column-end: span 3;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n  grid-column-end: span 4;\n}\n@media screen and (max-width: 830px) {\n.d-grid-blog[data-v-5000a427] {\n    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".d-grid-blog[data-v-5000a427] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  grid-gap: 1rem;\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n  grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n  grid-column-end: span 2;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n  grid-column-end: span 3;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n  grid-column-end: span 4;\n}\n@media screen and (max-width: 830px) {\n.d-grid-blog[data-v-5000a427] {\n    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n}\n.tutorial-comment[data-v-5000a427] {\n  height: 100%;\n  overflow-y: auto;\n  overflow-x: hidden !important;\n}\n.tutorial-comment[data-v-5000a427]::-webkit-scrollbar {\n  width: 0.5rem;\n}\n.tutorial-comment[data-v-5000a427]::-webkit-scrollbar-thumb {\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  background: rgba(0, 0, 0, 0);\n  border-radius: 5px;\n}\n.tutorial-comment[data-v-5000a427]:hover::-webkit-scrollbar-thumb {\n  background: rgba(0, 0, 0, 0.25);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34761,6 +34761,61 @@ var render = function() {
                 return undefined
               },
               proxy: true
+            },
+            {
+              key: "append",
+              fn: function() {
+                return [
+                  _c(
+                    "div",
+                    { staticStyle: { "z-index": "2" } },
+                    [
+                      _c(
+                        "v-card",
+                        {
+                          staticClass: "shadow-lg",
+                          attrs: { rounded: "lg", color: "transparent-light" }
+                        },
+                        [
+                          _c("v-card-text", [
+                            _c(
+                              "div",
+                              { staticClass: "d-flex" },
+                              [
+                                _c("v-textarea", {
+                                  attrs: {
+                                    dense: "",
+                                    outlined: "",
+                                    placeholder: "Komentar Anda",
+                                    rows: "1",
+                                    "hide-details": ""
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  [
+                                    _c("v-btn", { attrs: { text: "" } }, [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\tKirim\n\t\t\t\t\t\t\t\t"
+                                      )
+                                    ])
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ]
+              },
+              proxy: true
             }
           ]),
           model: {
@@ -34775,7 +34830,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "pa-3 pl-lg-5" },
+            { staticClass: "pa-3 pl-lg-4 tutorial-comment" },
             [
               _c(
                 "div",
@@ -34883,58 +34938,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("tutorial-comment-list"),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "pa-3 sticky-bottom mt-5",
-                  staticStyle: { "z-index": "2" }
-                },
-                [
-                  _c(
-                    "v-card",
-                    {
-                      staticClass: "shadow-lg",
-                      attrs: { rounded: "lg", color: "transparent-light" }
-                    },
-                    [
-                      _c("v-card-text", [
-                        _c(
-                          "div",
-                          { staticClass: "d-flex" },
-                          [
-                            _c("v-textarea", {
-                              attrs: {
-                                dense: "",
-                                outlined: "",
-                                placeholder: "Komentar Anda",
-                                rows: "1",
-                                "hide-details": ""
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              [
-                                _c("v-btn", { attrs: { text: "" } }, [
-                                  _vm._v(
-                                    "\n\t\t\t\t\t\t\t\t\tKirim\n\t\t\t\t\t\t\t\t"
-                                  )
-                                ])
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
-                      ])
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
+              _c("tutorial-comment-list")
             ],
             1
           )

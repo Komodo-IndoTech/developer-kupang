@@ -79,7 +79,7 @@
 			<template #prepend>
 				<!-- <v-divider></v-divider> -->
 			</template>
-			<div class="pa-3 pl-lg-5">
+			<div class="pa-3 pl-lg-4 tutorial-comment">
 				<div class="pa-3 sticky-top mb-5" style="z-index: 2">
 					<v-card rounded="lg" class="shadow-md" color="transparent-light">
 						<v-card-text class="d-flex">
@@ -116,7 +116,10 @@
 					</v-card>
 				</div>
 				<tutorial-comment-list/>
-				<div class="pa-3 sticky-bottom mt-5" style="z-index: 2">
+			</div>
+			<template #append>
+				<!-- <v-divider></v-divider> -->
+				<div style="z-index: 2">
 					<v-card rounded="lg" class="shadow-lg" color="transparent-light">
 						<v-card-text>
 							<div class="d-flex">
@@ -135,10 +138,7 @@
 						</v-card-text>
 					</v-card>
 				</div>
-			</div>
-			<!-- <template #append> -->
-				<!-- <v-divider></v-divider> -->
-			<!-- </template> -->
+			</template>
 		</v-navigation-drawer>
 	</div>
 </template>
@@ -323,6 +323,22 @@ export default {
 					grid-column-end: span 1;
 				}
 			}
+		}
+	}
+	.tutorial-comment{
+		height: 100%;
+		overflow-y: auto;
+		overflow-x: hidden !important;
+		&::-webkit-scrollbar{
+			width: .5rem;
+		}
+		&::-webkit-scrollbar-thumb{
+			transition: all .25s ease;
+			background: rgba($color: #000, $alpha: 0);
+			border-radius: 5px;
+		}
+		&:hover::-webkit-scrollbar-thumb{
+			background: rgba($color: #000, $alpha: .25);
 		}
 	}
 </style>

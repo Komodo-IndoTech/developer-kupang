@@ -60,3 +60,12 @@
 		backdrop-filter: blur(2px);
 	}
 }
+
+::-webkit-scrollbar{
+	width: .5rem;
+}
+::-webkit-scrollbar-thumb{
+	transition: all .25s ease;
+	background: rgba($color: #000, $alpha: .5);
+	border-radius: 4px;
+}
