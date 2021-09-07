@@ -3,7 +3,7 @@
 		<template #prepend>
 			<!-- <v-divider></v-divider> -->
 		</template>
-		<div class="pa-3 pl-lg-4 tutorial-comment">
+		<div class="pa-3 pl-lg-4 tutorial-comment fill-height d-flex flex-column">
 			<div class="pa-3 mb-5" style="z-index: 2">
 				<v-card rounded="lg" class="shadow-md" color="transparent-light">
 					<v-card-text class="d-flex">
