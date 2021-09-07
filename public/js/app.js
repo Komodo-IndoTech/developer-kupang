@@ -2938,6 +2938,126 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _list_TutorialCommentList_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../list/TutorialCommentList.vue */ "./resources/js/components/public/forum/tutorial/comments/list/TutorialCommentList.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    TutorialCommentList: _list_TutorialCommentList_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  props: {
+    value: {
+      type: Boolean,
+      "default": false
+    }
+  },
+  computed: {
+    comments: {
+      get: function get() {
+        return this.value;
+      },
+      set: function set(value) {
+        this.$emit('input', value);
+      }
+    }
+  },
+  data: function data() {
+    return {
+      search: '',
+      sort: 'new',
+      sortItems: [{
+        label: 'Terbaru',
+        value: 'new'
+      }, {
+        label: 'Vote Terbanyak',
+        value: 'popular'
+      }, {
+        label: 'Terlama',
+        value: 'old'
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/steps/item/StepItemList.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/steps/item/StepItemList.vue?vue&type=script&lang=js& ***!
@@ -4362,72 +4482,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _components_public_forum_tutorial_comments_list_TutorialCommentList_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../components/public/forum/tutorial/comments/list/TutorialCommentList.vue */ "./resources/js/components/public/forum/tutorial/comments/list/TutorialCommentList.vue");
+/* harmony import */ var _components_public_forum_tutorial_comments_sidebar_TutorialCommentSidebar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue */ "./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue");
 /* harmony import */ var _components_public_forum_tutorial_steps_item_StepItemList_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../components/public/forum/tutorial/steps/item/StepItemList.vue */ "./resources/js/components/public/forum/tutorial/steps/item/StepItemList.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -4513,7 +4569,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     StepItemList: _components_public_forum_tutorial_steps_item_StepItemList_vue__WEBPACK_IMPORTED_MODULE_1__.default,
-    TutorialCommentList: _components_public_forum_tutorial_comments_list_TutorialCommentList_vue__WEBPACK_IMPORTED_MODULE_0__.default
+    TutorialCommentSidebar: _components_public_forum_tutorial_comments_sidebar_TutorialCommentSidebar_vue__WEBPACK_IMPORTED_MODULE_0__.default
   },
   data: function data() {
     return {
@@ -4609,19 +4665,7 @@ __webpack_require__.r(__webpack_exports__);
             id: "324744ea0bfaa89553f2ad45b3cfa771"
           }
         }]
-      },
-      search: '',
-      sort: 'new',
-      sortItems: [{
-        label: 'Terbaru',
-        value: 'new'
-      }, {
-        label: 'Vote Terbanyak',
-        value: 'popular'
-      }, {
-        label: 'Terlama',
-        value: 'old'
-      }]
+      }
     };
   },
   created: function created() {
@@ -27949,6 +27993,45 @@ component.options.__file = "resources/js/components/public/forum/tutorial/commen
 
 /***/ }),
 
+/***/ "./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _TutorialCommentSidebar_vue_vue_type_template_id_4eeda651___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TutorialCommentSidebar.vue?vue&type=template&id=4eeda651& */ "./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=template&id=4eeda651&");
+/* harmony import */ var _TutorialCommentSidebar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TutorialCommentSidebar.vue?vue&type=script&lang=js& */ "./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _TutorialCommentSidebar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _TutorialCommentSidebar_vue_vue_type_template_id_4eeda651___WEBPACK_IMPORTED_MODULE_0__.render,
+  _TutorialCommentSidebar_vue_vue_type_template_id_4eeda651___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/public/forum/tutorial/steps/item/StepItemList.vue":
 /*!***********************************************************************************!*\
   !*** ./resources/js/components/public/forum/tutorial/steps/item/StepItemList.vue ***!
@@ -28756,6 +28839,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************!*\
+  !*** ./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TutorialCommentSidebar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TutorialCommentSidebar.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TutorialCommentSidebar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/public/forum/tutorial/steps/item/StepItemList.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************!*\
   !*** ./resources/js/components/public/forum/tutorial/steps/item/StepItemList.vue?vue&type=script&lang=js& ***!
@@ -29303,6 +29402,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TutorialCommentList_vue_vue_type_template_id_12b9c1b1___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TutorialCommentList_vue_vue_type_template_id_12b9c1b1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TutorialCommentList.vue?vue&type=template&id=12b9c1b1& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/comments/list/TutorialCommentList.vue?vue&type=template&id=12b9c1b1&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=template&id=4eeda651&":
+/*!**********************************************************************************************************************************!*\
+  !*** ./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=template&id=4eeda651& ***!
+  \**********************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TutorialCommentSidebar_vue_vue_type_template_id_4eeda651___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TutorialCommentSidebar_vue_vue_type_template_id_4eeda651___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TutorialCommentSidebar_vue_vue_type_template_id_4eeda651___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TutorialCommentSidebar.vue?vue&type=template&id=4eeda651& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=template&id=4eeda651&");
 
 
 /***/ }),
@@ -31352,6 +31468,232 @@ var render = function() {
       )
     ],
     2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=template&id=4eeda651&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue?vue&type=template&id=4eeda651& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-navigation-drawer",
+    {
+      staticClass: "tutorial-comment-container shadow-md ml-4",
+      style: {
+        "max-height":
+          _vm.$vuetify.breakpoint.width <= 800
+            ? "90%"
+            : "calc(100vh - " + _vm.$vuetify.application.top + ")"
+      },
+      attrs: {
+        right: "",
+        fixed: "",
+        floating: "",
+        app: "",
+        width: "450",
+        bottom: "",
+        clipped: "",
+        "mobile-breakpoint": "800"
+      },
+      scopedSlots: _vm._u([
+        {
+          key: "prepend",
+          fn: function() {
+            return undefined
+          },
+          proxy: true
+        },
+        {
+          key: "append",
+          fn: function() {
+            return [
+              _c(
+                "div",
+                { staticStyle: { "z-index": "2" } },
+                [
+                  _c(
+                    "v-card",
+                    {
+                      staticClass: "shadow-lg",
+                      attrs: { rounded: "lg", color: "transparent-light" }
+                    },
+                    [
+                      _c("v-card-text", [
+                        _c(
+                          "div",
+                          { staticClass: "d-flex" },
+                          [
+                            _c("v-textarea", {
+                              attrs: {
+                                dense: "",
+                                outlined: "",
+                                placeholder: "Komentar Anda",
+                                rows: "1",
+                                "hide-details": ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              [
+                                _c("v-btn", { attrs: { text: "" } }, [
+                                  _vm._v(
+                                    "\n\t\t\t\t\t\t\t\tKirim\n\t\t\t\t\t\t\t"
+                                  )
+                                ])
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ]
+          },
+          proxy: true
+        }
+      ]),
+      model: {
+        value: _vm.comments,
+        callback: function($$v) {
+          _vm.comments = $$v
+        },
+        expression: "comments"
+      }
+    },
+    [
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "pa-3 pl-lg-4 tutorial-comment" },
+        [
+          _c(
+            "div",
+            { staticClass: "pa-3 mb-5", staticStyle: { "z-index": "2" } },
+            [
+              _c(
+                "v-card",
+                {
+                  staticClass: "shadow-md",
+                  attrs: { rounded: "lg", color: "transparent-light" }
+                },
+                [
+                  _c(
+                    "v-card-text",
+                    { staticClass: "d-flex" },
+                    [
+                      _c("div", { staticClass: "grow-1" }, [
+                        _c(
+                          "div",
+                          { staticClass: "flex-middle" },
+                          [
+                            _c(
+                              "v-tooltip",
+                              {
+                                attrs: { top: "" },
+                                scopedSlots: _vm._u([
+                                  {
+                                    key: "activator",
+                                    fn: function(ref) {
+                                      var on = ref.on
+                                      return [
+                                        _c(
+                                          "v-btn",
+                                          _vm._g({ attrs: { icon: "" } }, on),
+                                          [
+                                            _c("v-icon", [
+                                              _vm._v("mdi-bell-ring-outline")
+                                            ])
+                                          ],
+                                          1
+                                        )
+                                      ]
+                                    }
+                                  }
+                                ])
+                              },
+                              [
+                                _vm._v(" "),
+                                _c("span", [
+                                  _vm._v(
+                                    "\n\t\t\t\t\t\t\t\t\tHidupkan pemberitahuan\n\t\t\t\t\t\t\t\t"
+                                  )
+                                ])
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              items: _vm.sortItems,
+                              label: "Urutkan",
+                              value: "value",
+                              "item-text": "label",
+                              "item-value": "value",
+                              rounded: "",
+                              solo: "",
+                              dense: "",
+                              flat: "",
+                              "hide-details": ""
+                            },
+                            model: {
+                              value: _vm.sort,
+                              callback: function($$v) {
+                                _vm.sort = $$v
+                              },
+                              expression: "sort"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("tutorial-comment-list")
+        ],
+        1
+      )
+    ]
   )
 }
 var staticRenderFns = []
@@ -34756,213 +35098,15 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c(
-        "v-navigation-drawer",
-        {
-          staticClass: "tutorial-comment-container shadow-md ml-4",
-          style: {
-            "max-height":
-              _vm.$vuetify.breakpoint.width <= 800
-                ? "90%"
-                : "calc(100vh - " + _vm.$vuetify.application.top + ")"
+      _c("tutorial-comment-sidebar", {
+        model: {
+          value: _vm.comments,
+          callback: function($$v) {
+            _vm.comments = $$v
           },
-          attrs: {
-            right: "",
-            fixed: "",
-            floating: "",
-            app: "",
-            width: "450",
-            bottom: "",
-            clipped: "",
-            "mobile-breakpoint": "800"
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "prepend",
-              fn: function() {
-                return undefined
-              },
-              proxy: true
-            },
-            {
-              key: "append",
-              fn: function() {
-                return [
-                  _c(
-                    "div",
-                    { staticStyle: { "z-index": "2" } },
-                    [
-                      _c(
-                        "v-card",
-                        {
-                          staticClass: "shadow-lg",
-                          attrs: { rounded: "lg", color: "transparent-light" }
-                        },
-                        [
-                          _c("v-card-text", [
-                            _c(
-                              "div",
-                              { staticClass: "d-flex" },
-                              [
-                                _c("v-textarea", {
-                                  attrs: {
-                                    dense: "",
-                                    outlined: "",
-                                    placeholder: "Komentar Anda",
-                                    rows: "1",
-                                    "hide-details": ""
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  [
-                                    _c("v-btn", { attrs: { text: "" } }, [
-                                      _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\tKirim\n\t\t\t\t\t\t\t\t"
-                                      )
-                                    ])
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ]
-              },
-              proxy: true
-            }
-          ]),
-          model: {
-            value: _vm.comments,
-            callback: function($$v) {
-              _vm.comments = $$v
-            },
-            expression: "comments"
-          }
-        },
-        [
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "pa-3 pl-lg-4 tutorial-comment" },
-            [
-              _c(
-                "div",
-                { staticClass: "pa-3 mb-5", staticStyle: { "z-index": "2" } },
-                [
-                  _c(
-                    "v-card",
-                    {
-                      staticClass: "shadow-md",
-                      attrs: { rounded: "lg", color: "transparent-light" }
-                    },
-                    [
-                      _c(
-                        "v-card-text",
-                        { staticClass: "d-flex" },
-                        [
-                          _c("div", { staticClass: "grow-1" }, [
-                            _c(
-                              "div",
-                              { staticClass: "flex-middle" },
-                              [
-                                _c(
-                                  "v-tooltip",
-                                  {
-                                    attrs: { top: "" },
-                                    scopedSlots: _vm._u([
-                                      {
-                                        key: "activator",
-                                        fn: function(ref) {
-                                          var on = ref.on
-                                          return [
-                                            _c(
-                                              "v-btn",
-                                              _vm._g(
-                                                { attrs: { icon: "" } },
-                                                on
-                                              ),
-                                              [
-                                                _c("v-icon", [
-                                                  _vm._v(
-                                                    "mdi-bell-ring-outline"
-                                                  )
-                                                ])
-                                              ],
-                                              1
-                                            )
-                                          ]
-                                        }
-                                      }
-                                    ])
-                                  },
-                                  [
-                                    _vm._v(" "),
-                                    _c("span", [
-                                      _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\t\tHidupkan pemberitahuan\n\t\t\t\t\t\t\t\t\t"
-                                      )
-                                    ])
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            [
-                              _c("v-select", {
-                                attrs: {
-                                  items: _vm.sortItems,
-                                  label: "Urutkan",
-                                  value: "value",
-                                  "item-text": "label",
-                                  "item-value": "value",
-                                  rounded: "",
-                                  solo: "",
-                                  dense: "",
-                                  flat: "",
-                                  "hide-details": ""
-                                },
-                                model: {
-                                  value: _vm.sort,
-                                  callback: function($$v) {
-                                    _vm.sort = $$v
-                                  },
-                                  expression: "sort"
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("tutorial-comment-list")
-            ],
-            1
-          )
-        ]
-      )
+          expression: "comments"
+        }
+      })
     ],
     1
   )
