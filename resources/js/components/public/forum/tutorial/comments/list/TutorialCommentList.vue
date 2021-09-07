@@ -7,9 +7,8 @@
 			<template #quote v-if="item.quote">
 				<div class="mt-2">
 					<step-item-list :value="item.quote" simple style="max-height: 150px; overflow: hidden; position: relative" class="rounded-xl">
-						<div class="overlay"></div>
-						<div class="overlay blur flex-middle">
-							<v-btn icon link dark>
+						<div class="overlay flex-middle">
+							<v-btn icon dark @click="$vuetify.goTo(`#step-${item.quote.id}`, { duration: 500, offset: 80 })">
 								<v-icon>mdi-reply</v-icon>
 							</v-btn>
 						</div>
@@ -45,6 +44,7 @@ export default {
 					down: 42,
 					reply_count: 10,
 					quote: {
+						id: 3,
 						title: 'The potential problem',
 						type: 'image',
 						content: {

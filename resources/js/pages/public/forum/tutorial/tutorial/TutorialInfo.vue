@@ -22,8 +22,8 @@
 				</v-app-bar>
 			</div>
 			<div class="sticky-top" :style="{ top: `${$vuetify.application.top}px` }" style="transition: top .2s cubic-bezier(.4,0,.2,1)">
-				<v-card rounded="lg" class="shadow" color="transparent-light">
-					<v-card-text class="py-0">
+				<v-card rounded="0" class="shadow" color="transparent-light">
+					<v-card-text class="py-1">
 						<div class="d-flex">
 							<div class="pr-3">
 								<div class="content-middle">
@@ -49,7 +49,7 @@
 							</div>
 							<div class="pl-3">
 								<div class="content-middle">
-									<v-badge content="9+" offset-x="14" offset-y="12" color="grey">
+									<v-badge content="9+" offset-x="14" offset-y="12" color="grey" class="mr-5">
 										<v-btn icon>
 											<v-icon>mdi-comment-outline</v-icon>
 										</v-btn>
@@ -62,7 +62,7 @@
 				<v-divider v-if="$vuetify.breakpoint.mobile"></v-divider>
 				<!-- <div class="w-100" style="height: 3rem; background: linear-gradient(to bottom, rgba(255,255,255, .9), transparent)" v-else></div> -->
 			</div>
-			<div>
+			<div class="px-lg-10 px-md-2">
 				<v-tabs align-with-title>
 					<v-tab>Konten</v-tab>
 					<v-tab>Log</v-tab>
@@ -75,12 +75,12 @@
 			</div>
 		</v-container>
 		<!-- comments -->
-		<v-navigation-drawer right fixed floating app width="450" bottom clipped mobile-breakpoint="800" class="shadow-md ml-4" v-model="comments" :style="{'max-height': $vuetify.breakpoint.width <= 800 ? '90%' : `calc(100vh - ${$vuetify.application.top})`}">
+		<v-navigation-drawer class="tutorial-comment-container shadow-md ml-4" right fixed floating app width="450" bottom clipped mobile-breakpoint="800" v-model="comments" :style="{'max-height': $vuetify.breakpoint.width <= 800 ? '90%' : `calc(100vh - ${$vuetify.application.top})`}">
 			<template #prepend>
 				<!-- <v-divider></v-divider> -->
 			</template>
 			<div class="pa-3 pl-lg-4 tutorial-comment">
-				<div class="pa-3 sticky-top mb-5" style="z-index: 2">
+				<div class="pa-3 mb-5" style="z-index: 2">
 					<v-card rounded="lg" class="shadow-md" color="transparent-light">
 						<v-card-text class="d-flex">
 							<div class="grow-1">
@@ -163,11 +163,13 @@ export default {
 				category: 'CSS',
 				steps: [
 					{
+						id: 1,
 						title: 'Problem',
 						type: 'text',
 						content: `Situation: you have a single line of text in a flex child element. You don’t want that text to wrap, you want it truncated with ellipsis (or fall back to just hiding the overflow). But the worst happens. The unthinkable! The layout breaks and forces the entire flex parent element too wide. Flexbox is supposed to be helping make layout easier!`,
 						items: [
 							{
+								id: 21,
 								title: '',
 								type: 'text',
 								content: `Fortunately, there is a (standardized) solution. You just need to use a non-flexbox property/value to do it.`,
@@ -175,6 +177,7 @@ export default {
 						]
 					},
 					{
+						id: 2,
 						title: 'What we want',
 						type: 'image',
 						content: {
@@ -183,6 +186,7 @@ export default {
 						},
 					},
 					{
+						id: 3,
 						title: 'The potential problem',
 						type: 'image',
 						content: {
@@ -191,6 +195,7 @@ export default {
 						},
 						items: [
 							{
+								id: 31,
 								title: '',
 								type: 'text',
 								content: `Not only might this prevent the narrowing of a container, it might blow a container out super wide.`,
@@ -198,11 +203,13 @@ export default {
 						]
 					},
 					{
+						id: 4,
 						title: 'Child elements (of the flex child) are the issue',
 						type: 'text',
 						content: `Confusing things a bit… if the text at hand is directly within the flex child, things work fine:`,
 					},
 					{
+						id: 5,
 						title: '',
 						type: 'code',
 						content: `
@@ -216,6 +223,7 @@ export default {
 </div>`
 					},
 					{
+						id: 6,
 						title: '',
 						type: 'code',
 						content: `
@@ -228,11 +236,13 @@ export default {
 }`
 					},
 					{
+						id: 7,
 						title: '',
 						type: 'text',
 						content: `The problem comes up when there are child elements, like:`
 					},
 					{
+						id: 8,
 						title: '',
 						type: 'code',
 						content: `
@@ -246,6 +256,7 @@ export default {
 </div>`
 					},
 					{
+						id: 9,
 						title: '',
 						type: 'code',
 						content: `
@@ -258,6 +269,7 @@ export default {
 }`
 					},
 					{
+						id: 10,
 						title: 'Demo',
 						type: 'embed',
 						// dark: false,
@@ -270,6 +282,7 @@ export default {
 					</iframe>`
 					},
 					{
+						id: 11,
 						title: 'Code Git',
 						type: 'gist',
 						content: {
@@ -325,20 +338,25 @@ export default {
 			}
 		}
 	}
-	.tutorial-comment{
-		height: 100%;
-		overflow-y: auto;
-		overflow-x: hidden !important;
-		&::-webkit-scrollbar{
-			width: .5rem;
-		}
-		&::-webkit-scrollbar-thumb{
-			transition: all .25s ease;
-			background: rgba($color: #000, $alpha: 0);
-			border-radius: 5px;
-		}
-		&:hover::-webkit-scrollbar-thumb{
-			background: rgba($color: #000, $alpha: .25);
+	.tutorial-comment-container{
+
+		transition: top .2s cubic-bezier(.4,0,.2,1), max-height .2s cubic-bezier(.4,0,.2,1);
+
+		.tutorial-comment{
+			height: 100%;
+			overflow-y: auto;
+			overflow-x: hidden !important;
+			&::-webkit-scrollbar{
+				width: .5rem;
+			}
+			&::-webkit-scrollbar-thumb{
+				transition: all .25s ease;
+				background: rgba($color: #000, $alpha: 0);
+				border-radius: 5px;
+			}
+			&:hover::-webkit-scrollbar-thumb{
+				background: rgba($color: #000, $alpha: .25);
+			}
 		}
 	}
 </style>

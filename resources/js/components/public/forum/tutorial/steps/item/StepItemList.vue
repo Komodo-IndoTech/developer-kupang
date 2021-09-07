@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div :id="`step-${item.id}`">
 		<slot/>
 		<v-card rounded="xl" :dark="item.dark != null && item.dark" class="mb-2 mb-lg-10 shadow-md">
 			<div class="d-flex justify-space-between">

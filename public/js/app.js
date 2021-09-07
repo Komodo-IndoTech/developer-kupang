@@ -2859,7 +2859,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2882,6 +2881,7 @@ __webpack_require__.r(__webpack_exports__);
         down: 42,
         reply_count: 10,
         quote: {
+          id: 3,
           title: 'The potential problem',
           type: 'image',
           content: {
@@ -4530,15 +4530,18 @@ __webpack_require__.r(__webpack_exports__);
         folder: true,
         category: 'CSS',
         steps: [{
+          id: 1,
           title: 'Problem',
           type: 'text',
           content: "Situation: you have a single line of text in a flex child element. You don\u2019t want that text to wrap, you want it truncated with ellipsis (or fall back to just hiding the overflow). But the worst happens. The unthinkable! The layout breaks and forces the entire flex parent element too wide. Flexbox is supposed to be helping make layout easier!",
           items: [{
+            id: 21,
             title: '',
             type: 'text',
             content: "Fortunately, there is a (standardized) solution. You just need to use a non-flexbox property/value to do it."
           }]
         }, {
+          id: 2,
           title: 'What we want',
           type: 'image',
           content: {
@@ -4546,6 +4549,7 @@ __webpack_require__.r(__webpack_exports__);
             alt: 'Flexbox and Truncated Text | css-tricks.com'
           }
         }, {
+          id: 3,
           title: 'The potential problem',
           type: 'image',
           content: {
@@ -4553,41 +4557,50 @@ __webpack_require__.r(__webpack_exports__);
             alt: 'Flexbox and Truncated Text | css-tricks.com'
           },
           items: [{
+            id: 31,
             title: '',
             type: 'text',
             content: "Not only might this prevent the narrowing of a container, it might blow a container out super wide."
           }]
         }, {
+          id: 4,
           title: 'Child elements (of the flex child) are the issue',
           type: 'text',
           content: "Confusing things a bit\u2026 if the text at hand is directly within the flex child, things work fine:"
         }, {
+          id: 5,
           title: '',
           type: 'code',
           content: "\n<div class=\"flex-parent\">\n\t<div class=\"flex-child\">\n\t\tText to truncate here.\n\t</div>\n\t<div class=\"flex-child\">\n\t\tOther stuff.\n\t</div>\n</div>"
         }, {
+          id: 6,
           title: '',
           type: 'code',
           content: "\n/* Text is directly within flex child,\n   so doing the wrapping here */\n.flex-child {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}"
         }, {
+          id: 7,
           title: '',
           type: 'text',
           content: "The problem comes up when there are child elements, like:"
         }, {
+          id: 8,
           title: '',
           type: 'code',
           content: "\n<div class=\"flex-parent\">\n  <div class=\"flex-child\">\n    <h2>Text to truncate here.</h2>\n  </div>\n  <div class=\"flex-child\">\n    Other stuff.\n  </div>\n</div>"
         }, {
+          id: 9,
           title: '',
           type: 'code',
           content: "\n/* Text is a header now,\n  so need to truncate there for it to work */\n.flex-child > h2 {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}"
         }, {
+          id: 10,
           title: 'Demo',
           type: 'embed',
           // dark: false,
           fullscreen: true,
           content: "\n\t\t\t\t\t<iframe height=\"300\" style=\"width: 100%;\" scrolling=\"no\" title=\"Thing you gotta know about flexbox\" src=\"https://codepen.io/chriscoyier/embed/zqedEr?default-tab=html%2Cresult\" frameborder=\"no\" loading=\"lazy\" allowtransparency=\"true\" allowfullscreen=\"true\">\n\t\t\t\t\t\tSee the Pen <a href=\"https://codepen.io/chriscoyier/pen/zqedEr\">\n\t\t\t\t\t\tThing you gotta know about flexbox</a> by Chris Coyier  (<a href=\"https://codepen.io/chriscoyier\">@chriscoyier</a>)\n\t\t\t\t\t\ton <a href=\"https://codepen.io\">CodePen</a>.\n\t\t\t\t\t</iframe>"
         }, {
+          id: 11,
           title: 'Code Git',
           type: 'gist',
           content: {
@@ -5266,7 +5279,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".d-grid-blog[data-v-5000a427] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  grid-gap: 1rem;\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n  grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n  grid-column-end: span 2;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n  grid-column-end: span 3;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n  grid-column-end: span 4;\n}\n@media screen and (max-width: 830px) {\n.d-grid-blog[data-v-5000a427] {\n    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n}\n.tutorial-comment[data-v-5000a427] {\n  height: 100%;\n  overflow-y: auto;\n  overflow-x: hidden !important;\n}\n.tutorial-comment[data-v-5000a427]::-webkit-scrollbar {\n  width: 0.5rem;\n}\n.tutorial-comment[data-v-5000a427]::-webkit-scrollbar-thumb {\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  background: rgba(0, 0, 0, 0);\n  border-radius: 5px;\n}\n.tutorial-comment[data-v-5000a427]:hover::-webkit-scrollbar-thumb {\n  background: rgba(0, 0, 0, 0.25);\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".d-grid-blog[data-v-5000a427] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  grid-gap: 1rem;\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n  grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n  grid-column-end: span 2;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n  grid-column-end: span 3;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n  grid-column-end: span 4;\n}\n@media screen and (max-width: 830px) {\n.d-grid-blog[data-v-5000a427] {\n    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));\n}\n.d-grid-blog > .colspan-1[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-2[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-3[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n.d-grid-blog > .colspan-4[data-v-5000a427] {\n    grid-column-end: span 1;\n}\n}\n.tutorial-comment-container[data-v-5000a427] {\n  transition: top 0.2s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427] {\n  height: 100%;\n  overflow-y: auto;\n  overflow-x: hidden !important;\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427]::-webkit-scrollbar {\n  width: 0.5rem;\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427]::-webkit-scrollbar-thumb {\n  -webkit-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n  background: rgba(0, 0, 0, 0);\n  border-radius: 5px;\n}\n.tutorial-comment-container .tutorial-comment[data-v-5000a427]:hover::-webkit-scrollbar-thumb {\n  background: rgba(0, 0, 0, 0.25);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -31288,16 +31301,22 @@ var render = function() {
                                 attrs: { value: item.quote, simple: "" }
                               },
                               [
-                                _c("div", { staticClass: "overlay" }),
-                                _vm._v(" "),
                                 _c(
                                   "div",
-                                  { staticClass: "overlay blur flex-middle" },
+                                  { staticClass: "overlay flex-middle" },
                                   [
                                     _c(
                                       "v-btn",
                                       {
-                                        attrs: { icon: "", link: "", dark: "" }
+                                        attrs: { icon: "", dark: "" },
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.$vuetify.goTo(
+                                              "#step-" + item.quote.id,
+                                              { duration: 500, offset: 80 }
+                                            )
+                                          }
+                                        }
                                       },
                                       [_c("v-icon", [_vm._v("mdi-reply")])],
                                       1
@@ -31360,6 +31379,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { attrs: { id: "step-" + _vm.item.id } },
     [
       _vm._t("default"),
       _vm._v(" "),
@@ -34573,10 +34593,10 @@ var render = function() {
                 "v-card",
                 {
                   staticClass: "shadow",
-                  attrs: { rounded: "lg", color: "transparent-light" }
+                  attrs: { rounded: "0", color: "transparent-light" }
                 },
                 [
-                  _c("v-card-text", { staticClass: "py-0" }, [
+                  _c("v-card-text", { staticClass: "py-1" }, [
                     _c("div", { staticClass: "d-flex" }, [
                       _c("div", { staticClass: "pr-3" }, [
                         _c(
@@ -34661,6 +34681,7 @@ var render = function() {
                             _c(
                               "v-badge",
                               {
+                                staticClass: "mr-5",
                                 attrs: {
                                   content: "9+",
                                   "offset-x": "14",
@@ -34699,6 +34720,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
+            { staticClass: "px-lg-10 px-md-2" },
             [
               _c(
                 "v-tabs",
@@ -34737,7 +34759,7 @@ var render = function() {
       _c(
         "v-navigation-drawer",
         {
-          staticClass: "shadow-md ml-4",
+          staticClass: "tutorial-comment-container shadow-md ml-4",
           style: {
             "max-height":
               _vm.$vuetify.breakpoint.width <= 800
@@ -34834,10 +34856,7 @@ var render = function() {
             [
               _c(
                 "div",
-                {
-                  staticClass: "pa-3 sticky-top mb-5",
-                  staticStyle: { "z-index": "2" }
-                },
+                { staticClass: "pa-3 mb-5", staticStyle: { "z-index": "2" } },
                 [
                   _c(
                     "v-card",
