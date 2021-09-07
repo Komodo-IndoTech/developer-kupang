@@ -1,5 +1,6 @@
 <template>
-	<div class="pa-3">
+	<div class="pa-3 d-flex">
+		<slot/>
 		<v-menu 
 			content-class="shadow" 
 			offset-y 

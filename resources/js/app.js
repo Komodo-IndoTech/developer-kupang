@@ -10,9 +10,9 @@ import number_mixin from './plugins/mixins/number'
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-
-
 const app = new Vue({
+    components: {
+    },
     router,
     vuetify,
     el: '#app',

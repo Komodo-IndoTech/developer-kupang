@@ -22,8 +22,8 @@
 				</v-app-bar>
 			</div>
 			<div class="sticky-top" :style="{ top: `${$vuetify.application.top}px` }" style="transition: top .2s cubic-bezier(.4,0,.2,1)">
-				<v-card flat rounded="0" color="transparent-light">
-					<v-card-text class="py-1">
+				<v-card rounded="lg" class="shadow" color="transparent-light">
+					<v-card-text class="py-0">
 						<div class="d-flex">
 							<div class="pr-3">
 								<div class="content-middle">
@@ -70,7 +70,7 @@
 				</v-tabs>
 				<v-divider></v-divider>
 			</div>
-			<div class="pa-lg-4 pa-2" :style="{'margin-top': $vuetify.breakpoint.mobile ? null : null}">
+			<div class="pa-lg-10 pa-2" :style="{'margin-top': $vuetify.breakpoint.mobile ? null : null}">
 				<step-item-list v-for="(step, i) in item.steps" :key="i" :value="step"/>
 			</div>
 		</v-container>
@@ -260,12 +260,23 @@ export default {
 					{
 						title: 'Demo',
 						type: 'embed',
+						// dark: false,
+						fullscreen: true,
 						content: `
 					<iframe height="300" style="width: 100%;" scrolling="no" title="Thing you gotta know about flexbox" src="https://codepen.io/chriscoyier/embed/zqedEr?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
 						See the Pen <a href="https://codepen.io/chriscoyier/pen/zqedEr">
 						Thing you gotta know about flexbox</a> by Chris Coyier  (<a href="https://codepen.io/chriscoyier">@chriscoyier</a>)
 						on <a href="https://codepen.io">CodePen</a>.
 					</iframe>`
+					},
+					{
+						title: 'Code Git',
+						type: 'gist',
+						content: {
+							username: `agriedd`,
+							file: `Hello World Javascript.js`,
+							id: `324744ea0bfaa89553f2ad45b3cfa771`
+						}
 					},
 				]
 			},
