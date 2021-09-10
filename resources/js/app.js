@@ -22,24 +22,43 @@ const app = new Vue({
                 counter: 0,
                 max: 2,
                 time: 5000,
+            },
+            blog: {
+                counter: 0,
+                max: 3,
+                time: 2000,
             }
         }
     },
     methods: {
         // increment nav.feedback.counter
-        incrementCounter: function() {
+        incrementFeedbackCounter: function() {
             setTimeout(()=>{
                 if (this.nav.feedback.counter >= this.nav.feedback.max -1) {
                     this.nav.feedback.counter = 0
                 } else {
                     this.nav.feedback.counter++
                 }
-                this.incrementCounter()
+                this.incrementFeedbackCounter()
             }, this.nav.feedback.time)
+        },
+        incrementBlogCounter: function() {
+            setTimeout(()=>{
+                if (this.nav.blog.counter >= this.nav.blog.max -1) {
+                    this.nav.blog.counter = 0
+                } else {
+                    this.nav.blog.counter++
+                }
+                this.incrementBlogCounter()
+            }, this.nav.blog.time)
         },
     },
     created(){
-        this.incrementCounter()
+        setTimeout(()=>{
+            this.incrementFeedbackCounter()
+        }, 500)
+        this.incrementBlogCounter()
+
         // this.$vuetify.theme.dark = true
     }
 });

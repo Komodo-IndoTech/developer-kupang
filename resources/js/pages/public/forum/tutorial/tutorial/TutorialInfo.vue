@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<v-container class="pa-0" style="max-width: 1024px">
+		<v-container class="pa-0" style="max-width: 1024px" id="tutorial-info">
 			<div class="pa-3">
 				<v-app-bar
 					prominent
@@ -78,7 +78,7 @@
 					</div>
 					<div class="d-flex py-5">
 						<div class="pa-2 flex-grow-1">
-							<v-card color="grey lighten-5" rounded="lg" flat link>
+							<v-card color="grey lighten-5" rounded="lg" flat link @click="report.tutorial = true">
 								<v-card-text class="text-center">
 									Laporkan Tutorial
 								</v-card-text>
@@ -92,6 +92,7 @@
 							</v-card>
 						</div>
 					</div>
+					<report-dialog-tutorial v-model="report.tutorial"/>
 				</template>
 				<template v-else>
 					<step-item-list-placeholder v-for="i in 4" :key="i"/>
@@ -104,14 +105,19 @@
 </template>
 <script>
 import TutorialCommentSidebar from '../../../../../components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue'
+import ReportDialogTutorial from '../../../../../components/public/forum/tutorial/reports/ReportDialogTutorial.vue'
 import StepItemList from '../../../../../components/public/forum/tutorial/steps/item/StepItemList.vue'
 import StepItemListPlaceholder from '../../../../../components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue'
 import RatingStars from '../../../../../components/public/ratings/stars/RatingStars.vue'
 export default {
- 	components: { StepItemList, TutorialCommentSidebar, StepItemListPlaceholder, RatingStars },
+ 	components: { StepItemList, TutorialCommentSidebar, StepItemListPlaceholder, RatingStars, ReportDialogTutorial },
 	data() {
 		return {
 			comments: true,
+			report: {
+				tutorial: false,
+				step: false,
+			},
 			item: {
 				id: 1,
 				title: 'Flexbox and Truncated Text',

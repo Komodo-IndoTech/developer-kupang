@@ -36,9 +36,13 @@
 							</v-list-item-content>
 						</v-list-item>
 						<v-list-item link :to="{ name: 'blog' }">
-							<v-list-item-icon>
-								<v-icon>mdi-newspaper-variant-outline</v-icon>
-							</v-list-item-icon>
+							<v-scroll-y-transition mode="out-in">
+								<v-list-item-icon :key="nav.blog.counter">
+									<v-icon v-if="nav.blog.counter == 0">mdi-newspaper-variant-outline</v-icon>
+									<v-icon v-else-if="nav.blog.counter == 1">mdi-calendar</v-icon>
+									<v-icon v-else>mdi-bullhorn-outline</v-icon>
+								</v-list-item-icon>
+							</v-scroll-y-transition>
 							<v-list-item-content>
 								<v-list-item-title>
 									Blog & Event
@@ -66,12 +70,12 @@
 							</v-list-item-content>
 						</v-list-item> --}}
 						<v-list-item link>
-							<v-slide-y-transition mode="out-in">
+							<v-scroll-y-transition mode="out-in">
 								<v-list-item-icon :key="nav.feedback.counter">
 									<v-icon v-if="nav.feedback.counter == 0">mdi-message-alert-outline</v-icon>
 									<v-icon v-else>mdi-handshake-outline</v-icon>
 								</v-list-item-icon>
-							</v-slide-y-transition>
+							</v-scroll-y-transition>
 							<v-list-item-content>
 								<v-list-item-title>
 									Feedback & Dukungan
