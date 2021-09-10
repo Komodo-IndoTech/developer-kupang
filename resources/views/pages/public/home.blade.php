@@ -66,22 +66,15 @@
 							</v-list-item-content>
 						</v-list-item> --}}
 						<v-list-item link>
-							<v-list-item-icon>
-								<v-icon>mdi-message-alert-outline</v-icon>
-							</v-list-item-icon>
+							<v-slide-y-transition mode="out-in">
+								<v-list-item-icon :key="nav.feedback.counter">
+									<v-icon v-if="nav.feedback.counter == 0">mdi-message-alert-outline</v-icon>
+									<v-icon v-else>mdi-handshake-outline</v-icon>
+								</v-list-item-icon>
+							</v-slide-y-transition>
 							<v-list-item-content>
 								<v-list-item-title>
-									Feedback
-								</v-list-item-title>
-							</v-list-item-content>
-						</v-list-item>
-						<v-list-item link>
-							<v-list-item-icon>
-								<v-icon>mdi-lifebuoy</v-icon>
-							</v-list-item-icon>
-							<v-list-item-content>
-								<v-list-item-title>
-									Support
+									Feedback & Dukungan
 								</v-list-item-title>
 							</v-list-item-content>
 						</v-list-item>

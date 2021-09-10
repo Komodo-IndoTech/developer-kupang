@@ -5042,7 +5042,33 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
   router: _plugins_pages_home__WEBPACK_IMPORTED_MODULE_0__.router,
   vuetify: _plugins_pages_home__WEBPACK_IMPORTED_MODULE_0__.vuetify,
   el: '#app',
-  created: function created() {// this.$vuetify.theme.dark = true
+  data: {
+    nav: {
+      feedback: {
+        counter: 0,
+        max: 2,
+        time: 5000
+      }
+    }
+  },
+  methods: {
+    // increment nav.feedback.counter
+    incrementCounter: function incrementCounter() {
+      var _this = this;
+
+      setTimeout(function () {
+        if (_this.nav.feedback.counter >= _this.nav.feedback.max - 1) {
+          _this.nav.feedback.counter = 0;
+        } else {
+          _this.nav.feedback.counter++;
+        }
+
+        _this.incrementCounter();
+      }, this.nav.feedback.time);
+    }
+  },
+  created: function created() {
+    this.incrementCounter(); // this.$vuetify.theme.dark = true
   }
 });
 

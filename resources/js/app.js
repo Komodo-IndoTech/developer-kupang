@@ -16,7 +16,30 @@ const app = new Vue({
     router,
     vuetify,
     el: '#app',
+    data: {
+        nav: {
+            feedback: {
+                counter: 0,
+                max: 2,
+                time: 5000,
+            }
+        }
+    },
+    methods: {
+        // increment nav.feedback.counter
+        incrementCounter: function() {
+            setTimeout(()=>{
+                if (this.nav.feedback.counter >= this.nav.feedback.max -1) {
+                    this.nav.feedback.counter = 0
+                } else {
+                    this.nav.feedback.counter++
+                }
+                this.incrementCounter()
+            }, this.nav.feedback.time)
+        },
+    },
     created(){
+        this.incrementCounter()
         // this.$vuetify.theme.dark = true
     }
 });
