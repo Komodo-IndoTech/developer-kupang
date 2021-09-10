@@ -73,8 +73,24 @@
 			<div class="pa-lg-10 pa-2" :style="{'margin-top': $vuetify.breakpoint.mobile ? null : null}">
 				<template v-if="true">
 					<step-item-list v-for="(step, i) in item.steps" :key="i" :value="step"/>
-					<div>
-						
+					<div class="d-flex justify-center py-5">
+						<rating-stars v-model="item.rating"/>
+					</div>
+					<div class="d-flex py-5">
+						<div class="pa-2 flex-grow-1">
+							<v-card color="grey lighten-5" rounded="lg" flat link>
+								<v-card-text class="text-center">
+									Laporkan Tutorial
+								</v-card-text>
+							</v-card>
+						</div>
+						<div class="pa-2 flex-grow-1">
+							<v-card color="grey lighten-5" rounded="lg" flat link>
+								<v-card-text class="text-center">
+									Komentar
+								</v-card-text>
+							</v-card>
+						</div>
 					</div>
 				</template>
 				<template v-else>
@@ -90,8 +106,9 @@
 import TutorialCommentSidebar from '../../../../../components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue'
 import StepItemList from '../../../../../components/public/forum/tutorial/steps/item/StepItemList.vue'
 import StepItemListPlaceholder from '../../../../../components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue'
+import RatingStars from '../../../../../components/public/ratings/stars/RatingStars.vue'
 export default {
- 	components: { StepItemList, TutorialCommentSidebar, StepItemListPlaceholder },
+ 	components: { StepItemList, TutorialCommentSidebar, StepItemListPlaceholder, RatingStars },
 	data() {
 		return {
 			comments: true,
@@ -99,6 +116,7 @@ export default {
 				id: 1,
 				title: 'Flexbox and Truncated Text',
 				image: 'https://picsum.photos/1920/1080?random',
+				rating: 4.5,
 				attrs: {
 					'v-bind:style': '{ backgroundImage: "url(" + image + ")" }'
 				},

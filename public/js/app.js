@@ -3607,7 +3607,20 @@ __webpack_require__.r(__webpack_exports__);
       "default": 5
     }
   },
+  data: function data() {
+    return {
+      hover_rate: 0
+    };
+  },
   computed: {
+    rate: {
+      get: function get() {
+        return this.value;
+      },
+      set: function set(value) {
+        this.$emit('input', value);
+      }
+    },
     rating: {
       get: function get() {
         return Math.round(this.value);
@@ -3619,6 +3632,25 @@ __webpack_require__.r(__webpack_exports__);
           return index + 1;
         });
       }
+    }
+  },
+  methods: {
+    color: function color(star) {
+      var color = 'grey';
+
+      if (this.hover_rate >= star) {
+        color = 'blue lighten-2';
+      } else if (this.rate >= star) {
+        color = 'yellow darken-2';
+      } else color = 'grey';
+
+      return color;
+    },
+    setRate: function setRate(star) {
+      this.rate = star;
+    },
+    setHoverRate: function setHoverRate(star) {
+      this.hover_rate = star;
     }
   }
 });
@@ -4740,6 +4772,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_public_forum_tutorial_comments_sidebar_TutorialCommentSidebar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue */ "./resources/js/components/public/forum/tutorial/comments/sidebar/TutorialCommentSidebar.vue");
 /* harmony import */ var _components_public_forum_tutorial_steps_item_StepItemList_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../components/public/forum/tutorial/steps/item/StepItemList.vue */ "./resources/js/components/public/forum/tutorial/steps/item/StepItemList.vue");
 /* harmony import */ var _components_public_forum_tutorial_steps_item_StepItemListPlaceholder_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue */ "./resources/js/components/public/forum/tutorial/steps/item/StepItemListPlaceholder.vue");
+/* harmony import */ var _components_public_ratings_stars_RatingStars_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../components/public/ratings/stars/RatingStars.vue */ "./resources/js/components/public/ratings/stars/RatingStars.vue");
 //
 //
 //
@@ -4828,6 +4861,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -4835,7 +4885,8 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     StepItemList: _components_public_forum_tutorial_steps_item_StepItemList_vue__WEBPACK_IMPORTED_MODULE_1__.default,
     TutorialCommentSidebar: _components_public_forum_tutorial_comments_sidebar_TutorialCommentSidebar_vue__WEBPACK_IMPORTED_MODULE_0__.default,
-    StepItemListPlaceholder: _components_public_forum_tutorial_steps_item_StepItemListPlaceholder_vue__WEBPACK_IMPORTED_MODULE_2__.default
+    StepItemListPlaceholder: _components_public_forum_tutorial_steps_item_StepItemListPlaceholder_vue__WEBPACK_IMPORTED_MODULE_2__.default,
+    RatingStars: _components_public_ratings_stars_RatingStars_vue__WEBPACK_IMPORTED_MODULE_3__.default
   },
   data: function data() {
     return {
@@ -4844,6 +4895,7 @@ __webpack_require__.r(__webpack_exports__);
         id: 1,
         title: 'Flexbox and Truncated Text',
         image: 'https://picsum.photos/1920/1080?random',
+        rating: 4.5,
         attrs: {
           'v-bind:style': '{ backgroundImage: "url(" + image + ")" }'
         },
@@ -32769,7 +32821,11 @@ var render = function() {
                             _c("div", { staticClass: "flex-middle" }, [
                               _c(
                                 "div",
-                                [_c("rating-stars", { attrs: { value: 4.5 } })],
+                                [
+                                  _c("rating-stars", {
+                                    attrs: { small: "", value: 4.5 }
+                                  })
+                                ],
                                 1
                               )
                             ])
@@ -33574,13 +33630,26 @@ var render = function() {
     _vm._l(_vm.stars, function(star, i) {
       return _c(
         "v-icon",
-        {
-          key: i,
-          attrs: {
-            small: "",
-            color: _vm.rating <= star ? "grey" : "yellow darken-2"
-          }
-        },
+        _vm._b(
+          {
+            key: i,
+            attrs: { color: _vm.color(star) },
+            on: {
+              click: function($event) {
+                return _vm.setRate(star)
+              },
+              mouseover: function($event) {
+                return _vm.setHoverRate(star)
+              },
+              mouseout: function($event) {
+                return _vm.setHoverRate(null)
+              }
+            }
+          },
+          "v-icon",
+          _vm.$attrs,
+          false
+        ),
         [_vm._v("mdi-star")]
       )
     }),
@@ -36184,7 +36253,86 @@ var render = function() {
                       })
                     }),
                     _vm._v(" "),
-                    _c("div")
+                    _c(
+                      "div",
+                      { staticClass: "d-flex justify-center py-5" },
+                      [
+                        _c("rating-stars", {
+                          model: {
+                            value: _vm.item.rating,
+                            callback: function($$v) {
+                              _vm.$set(_vm.item, "rating", $$v)
+                            },
+                            expression: "item.rating"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "d-flex py-5" }, [
+                      _c(
+                        "div",
+                        { staticClass: "pa-2 flex-grow-1" },
+                        [
+                          _c(
+                            "v-card",
+                            {
+                              attrs: {
+                                color: "grey lighten-5",
+                                rounded: "lg",
+                                flat: "",
+                                link: ""
+                              }
+                            },
+                            [
+                              _c(
+                                "v-card-text",
+                                { staticClass: "text-center" },
+                                [
+                                  _vm._v(
+                                    "\n\t\t\t\t\t\t\t\tLaporkan Tutorial\n\t\t\t\t\t\t\t"
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "pa-2 flex-grow-1" },
+                        [
+                          _c(
+                            "v-card",
+                            {
+                              attrs: {
+                                color: "grey lighten-5",
+                                rounded: "lg",
+                                flat: "",
+                                link: ""
+                              }
+                            },
+                            [
+                              _c(
+                                "v-card-text",
+                                { staticClass: "text-center" },
+                                [
+                                  _vm._v(
+                                    "\n\t\t\t\t\t\t\t\tKomentar\n\t\t\t\t\t\t\t"
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ])
                   ]
                 : 0
             ],

@@ -59,7 +59,7 @@
 						<div>
 							<div class="flex-middle">
 								<div>
-									<rating-stars :value="4.5"/>
+									<rating-stars small :value="4.5"/>
 								</div>
 							</div>
 						</div>
