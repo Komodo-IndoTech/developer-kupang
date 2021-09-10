@@ -12,7 +12,7 @@
 					<v-icon small>mdi-dots-vertical</v-icon>
 				</v-btn>
 			</template>
-			<v-card rounded="lg" color="transparent-light">
+			<v-card rounded="lg" outlined color="transparent-light">
 				<v-list-item link>
 					<v-list-item-icon>
 						<v-icon>mdi-pencil</v-icon>

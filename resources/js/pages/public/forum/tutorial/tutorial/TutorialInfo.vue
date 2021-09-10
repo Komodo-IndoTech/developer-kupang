@@ -71,8 +71,11 @@
 				<v-divider></v-divider>
 			</div>
 			<div class="pa-lg-10 pa-2" :style="{'margin-top': $vuetify.breakpoint.mobile ? null : null}">
-				<template v-if="false">
+				<template v-if="true">
 					<step-item-list v-for="(step, i) in item.steps" :key="i" :value="step"/>
+					<div>
+						
+					</div>
 				</template>
 				<template v-else>
 					<step-item-list-placeholder v-for="i in 4" :key="i"/>

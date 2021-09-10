@@ -187,12 +187,11 @@
 				</v-container>
 			</div>
 			<div class="row-1-sm pt-4 px-4 px-md-0">
-				<side-tag-question-public class="sticky-top" :style="{ top: `${$vuetify.application.top}px` }"/>
+				<side-tag-question-public class="sticky-top" :style="{ top: `${$vuetify.application.top + 68}px` }"/>
 			</div>
 		</div>
-		<v-card flat rounded="0" dark>
+		<v-card flat rounded="0">
 			<v-card-text class="pa-lg-10">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam autem nemo odio dignissimos eaque quas maxime repellat nihil, voluptatibus minus molestias totam modi obcaecati dolore officiis, esse aliquid voluptate distinctio?
 			</v-card-text>
 		</v-card>
 	</div>

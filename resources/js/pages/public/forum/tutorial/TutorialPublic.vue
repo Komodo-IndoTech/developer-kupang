@@ -1,18 +1,24 @@
 <template>
 	<div>
-		<v-card dark flat rounded="0">
-			<v-container class="pb-0">
-				<div class="pa-5">
-					<h1 style="font-family: SuisseWorks,Georgia,Times,times new roman,serif,apple color emoji,segoe ui emoji,segoe ui symbol">
-						Tutorial
-					</h1>
-				</div>
-				<v-tabs slider-size="5">
-					<v-tab :to="{ name: 'tutorial' }">Semua Tutorial</v-tab>
-					<v-tab :to="{ name: 'permintaan' }">Permintaan</v-tab>
-					<v-tabs-slider color="grey"></v-tabs-slider>
-				</v-tabs>
-			</v-container>
+		<div class="pt-lg-5">
+			<v-card flat rounded="0" color="transparent-light">
+				<v-card-title>
+					Tutorial
+				</v-card-title>
+				<v-card-text>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, harum tempora! Asperiores esse commodi sint. Suscipit, pariatur. Eos, iste aspernatur ex nisi ipsam, non optio, quo est quia eum incidunt.
+				</v-card-text>
+			</v-card>
+		</div>
+		<v-card flat rounded="0" class="sticky-top" color="transparent-light" :style="{ top: `${$vuetify.application.top}px` }" style="transition: top .2s cubic-bezier(.4,0,.2,1); z-index: 10">
+			<v-tabs color="teal" height="64">
+				<v-tab :to="{ name: 'tutorial' }" exact>Semua Tutorial</v-tab>
+				<v-tab :to="{ name: 'permintaan' }">Permintaan</v-tab>
+				<v-tabs-slider color="teal"></v-tabs-slider>
+			</v-tabs>
+			<div class="d-flex justify-end">
+				<v-divider></v-divider>
+			</div>
 		</v-card>
 		<router-view></router-view>
 	</div>

@@ -1,11 +1,16 @@
 <template>
-	<div>
+	<div class="px-lg-10">
 		<v-toolbar flat>
-			<v-tabs align-with-title>
-				<v-tab :to="{ name: 'forum' }" exact>Pertanyaan</v-tab>
-				<v-tab :to="{ name: 'tutorial' }">Tutorial</v-tab>
-				<v-tab :to="{ name: 'tag' }">Tag</v-tab>
-			</v-tabs>
+			<v-toolbar-title>
+				Forum
+			</v-toolbar-title>
+			<template #extension>
+				<v-tabs>
+					<v-tab :to="{ name: 'forum' }" exact>Pertanyaan</v-tab>
+					<v-tab :to="{ name: 'tutorial' }">Tutorial</v-tab>
+					<v-tab :to="{ name: 'tag' }">Tag</v-tab>
+				</v-tabs>
+			</template>
 		</v-toolbar>
 		<v-divider></v-divider>
 		<router-view></router-view>
