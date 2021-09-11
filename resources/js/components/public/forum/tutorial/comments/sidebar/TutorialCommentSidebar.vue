@@ -11,8 +11,8 @@
 							<div class="flex-middle">
 								<v-tooltip top>
 									<template v-slot:activator="{ on }">
-										<v-btn icon v-on="on">
-											<v-icon>mdi-bell-ring-outline</v-icon>
+										<v-btn icon v-on="on" class="no-animation-on-hover -r">
+											<v-icon class="ringing-bell">mdi-bell-ring-outline</v-icon>
 										</v-btn>
 									</template>
 									<span>

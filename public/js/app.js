@@ -33811,11 +33811,20 @@ var render = function() {
                                       return [
                                         _c(
                                           "v-btn",
-                                          _vm._g({ attrs: { icon: "" } }, on),
+                                          _vm._g(
+                                            {
+                                              staticClass:
+                                                "no-animation-on-hover -r",
+                                              attrs: { icon: "" }
+                                            },
+                                            on
+                                          ),
                                           [
-                                            _c("v-icon", [
-                                              _vm._v("mdi-bell-ring-outline")
-                                            ])
+                                            _c(
+                                              "v-icon",
+                                              { staticClass: "ringing-bell" },
+                                              [_vm._v("mdi-bell-ring-outline")]
+                                            )
                                           ],
                                           1
                                         )
