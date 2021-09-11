@@ -107,3 +107,28 @@ export default {
 	},
 }
 </script>
+<style lang="scss" scoped>
+	.tutorial-comment-container{
+
+		transition: all .2s cubic-bezier(.4,0,.2,1);
+			// , max-height .2s cubic-bezier(.4,0,.2,1);
+
+		.tutorial-comment{
+			height: 100%;
+			overflow-y: auto;
+			overflow-x: hidden !important;
+			&::-webkit-scrollbar{
+				width: .5rem;
+			}
+			&::-webkit-scrollbar-thumb{
+				transition: all .25s ease;
+				background: rgba($color: #000, $alpha: 0);
+				border-radius: 5px;
+				opacity: 0;
+			}
+			&:hover::-webkit-scrollbar-thumb{
+				background: rgba($color: #000, $alpha: .25);
+			}
+		}
+	}
+</style>

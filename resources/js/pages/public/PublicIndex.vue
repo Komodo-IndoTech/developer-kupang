@@ -1,13 +1,28 @@
 <template>
 	<div>
-		<navbar/>
+		<navbar :notification="notification" @set-notification="notification = $event"/>
+		<navbar-notification v-model="notification"/>
 		<router-view/>
 	</div>
 </template>
 <script>
 import Navbar from '../../components/public/navbars/Navbar.vue'
+import axios from 'axios'
+import NavbarNotification from '../../components/public/navbars/notifications/NavbarNotification.vue'
 export default {
-  	components: { Navbar },
+  	components: { Navbar, NavbarNotification },
 	name: 'PublicIndex',
+	data() {
+		return {
+			notification: true
+		}
+	},
+	methods: {
+		loadWeather(){
+		}
+	},
+	created(){
+		// this.loadWeather()
+	}
 }
 </script>

@@ -18,6 +18,16 @@ Vue.mixin({
 				return new Intl.DateTimeFormat(local, { month: fullMonth ? 'long' : 'short', day: 'numeric' }).format(date)
 			return new Intl.DateTimeFormat(local, { year: '2-digit', month: 'long', day: 'numeric' }).format(date)
 		},
+		daydate(val, local = 'id-ID', fullMonth = false) {
+			let date = new Date(val);
+			/**
+			 * check if the date is in year
+			 * 
+			 */
+			if(date.getFullYear() === (new Date()).getFullYear())
+				return new Intl.DateTimeFormat(local, { month: fullMonth ? 'long' : 'short', day: 'numeric', weekday: 'long' }).format(date)
+			return new Intl.DateTimeFormat(local, { year: '2-digit', month: 'long', day: 'numeric', weekday: 'long' }).format(date)
+		},
 		time(val, local = 'id-ID'){
 			let date = new Date(val);
 			return new Intl.DateTimeFormat(local, { hour: 'numeric', minute: '2-digit' }).format(date)

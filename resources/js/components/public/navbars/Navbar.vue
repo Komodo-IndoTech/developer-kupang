@@ -33,9 +33,10 @@
 				<v-badge color="teal" :content="1" dot bottom offset-x="15" offset-y="15" :value="1 > 0">
 					<v-btn
 						icon
-						class="ml-3"
-						link>
-						<v-icon>mdi-bell</v-icon>
+						class="ml-3 no-animation-on-hover -r"
+						link
+						@click="$emit('set-notification', !notification)">
+						<v-icon :class="{ 'ringin-bell': true }">mdi-bell</v-icon>
 					</v-btn>
 				</v-badge>
 				<template>
@@ -49,6 +50,11 @@
 </template>
 <script>
 export default {
-	
+	props: {
+		notification: {
+			type: Boolean,
+			default: false
+		}
+	},
 }
 </script>
