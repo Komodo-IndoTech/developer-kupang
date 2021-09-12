@@ -1,36 +1,13 @@
 <template>
 	<v-navigation-drawer v-model="notification" width="400" right mobile-breakpoint="600" clipped style="z-index: 10" class="notification-drawer pa-3 elevation-0" overlay-opacity=".25" floating bottom fixed temporary :style="{'max-height': $vuetify.breakpoint.width <= 600 ? '90%' : `calc(100vh + 0)`}">
 		<template #prepend>
-			<v-card rounded="lg" class="mb-3 shadow-lg">
-				<v-card-text>
-					<div class="d-flex">
-						<div>
-							{{ Date.now() | date('id-ID', false, true) }}
-						</div>
-						<v-spacer></v-spacer>
-						<div class="pl-3">
-							<v-icon>mdi-weather-sunny</v-icon>
-						</div>
-					</div>
-				</v-card-text>
-				<v-divider></v-divider>
-				<div>
-					<div class="d-flex">
-						<div class="text--disabled pa-3">
-							<v-icon small disabled>mdi-bell</v-icon>
-						</div>
-						<div>
-							<div class="flex-middle jutify-end">
-								<v-tabs class="rounded-lg fill-height" v-model="tab">
-									<v-tab>Umum</v-tab>
-									<v-tab>Log</v-tab>
-									<v-tab>Aplikasi</v-tab>
-								</v-tabs>
-							</div>
-						</div>
-					</div>
-				</div>
-			</v-card>
+			<navbar-notification-header>
+				<v-tabs class="rounded-lg fill-height" v-model="tab">
+					<v-tab>Umum</v-tab>
+					<v-tab>Log</v-tab>
+					<v-tab>Aplikasi</v-tab>
+				</v-tabs>
+			</navbar-notification-header>
 		</template>
 		<v-card rounded="lg" class="d-flex flex-column shadow-lg" style="max-height: 100%" outlined>
 			<v-card-text class="d-flex py-2">
@@ -77,8 +54,9 @@
 import EmptyContent from '../../dummy/EmptyContent.vue';
 import NavbarNotificationList from './list/NavbarNotificationList.vue';
 import NavbarNotificationListLog from './list/NavbarNotificationListLog.vue';
+import NavbarNotificationHeader from './NavbarNotificationHeader.vue';
 export default {
-  	components: { NavbarNotificationList, NavbarNotificationListLog, EmptyContent },
+  	components: { NavbarNotificationList, NavbarNotificationListLog, EmptyContent, NavbarNotificationHeader },
 	props: {
 		value: Boolean,
 	},
