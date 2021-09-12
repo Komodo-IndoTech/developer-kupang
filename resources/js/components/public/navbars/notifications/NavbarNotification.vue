@@ -55,6 +55,7 @@
 					<navbar-notification-list v-if="tab == 0"/>
 					<navbar-notification-list-log v-else-if="tab == 1"/>
 					<!-- TODO tambah notifikasi tab aplikasi -->
+					<empty-content v-else/>
 				</v-expand-transition>
 			</v-card-text>
 			<v-divider></v-divider>
@@ -73,10 +74,11 @@
 	</v-navigation-drawer>
 </template>
 <script>
+import EmptyContent from '../../dummy/EmptyContent.vue';
 import NavbarNotificationList from './list/NavbarNotificationList.vue';
 import NavbarNotificationListLog from './list/NavbarNotificationListLog.vue';
 export default {
-  	components: { NavbarNotificationList, NavbarNotificationListLog },
+  	components: { NavbarNotificationList, NavbarNotificationListLog, EmptyContent },
 	props: {
 		value: Boolean,
 	},
