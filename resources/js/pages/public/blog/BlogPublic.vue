@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="px-lg-10">
 		<v-toolbar flat>
-			<v-tabs align-with-title>
+			<v-tabs>
 				<v-tab :to="{ name: 'blog' }">Blog</v-tab>
 				<v-tab :to="{ name: 'event' }">Event</v-tab>
 				<v-tab>Diarsipkan</v-tab>
