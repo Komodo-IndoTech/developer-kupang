@@ -138,7 +138,7 @@ export default {
 					id: 2,
 					icon: {
 						name: 'mdi-fire',
-						className: 'pink--text text--darken-2',
+						className: 'pink--text text--darken-2 fire',
 					},
 					title: 'Update aplikasi',
 					body: 'Kami telah menambahkan fitur baru 🔥',
