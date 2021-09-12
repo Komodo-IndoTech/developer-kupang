@@ -17,11 +17,11 @@
 				<div>
 					<div class="d-flex">
 						<div class="text--disabled pa-3">
-							<v-icon>mdi-bell</v-icon>
+							<v-icon small disabled>mdi-bell</v-icon>
 						</div>
 						<div>
 							<div class="flex-middle jutify-end">
-								<v-tabs class="rounded-lg fill-height">
+								<v-tabs class="rounded-lg fill-height" v-model="tab">
 									<v-tab>Umum</v-tab>
 									<v-tab>Log</v-tab>
 									<v-tab>Aplikasi</v-tab>
@@ -40,20 +40,31 @@
 					</div>
 				</div>
 				<v-spacer></v-spacer>
-				<v-btn text title="Tandai telah dibaca semua" icon @click="checkAllNotification">
-					<v-icon>mdi-bell-check</v-icon>
+				<v-btn title="Segarkan pemberitahuan" icon @click="refreshNotification">
+					<v-icon>mdi-refresh</v-icon>
 				</v-btn>
+				<v-fab-transition>
+					<v-btn title="Tandai telah dibaca semua" icon @click="checkAllNotification" v-if="tab == 0" :key="tab">
+						<v-icon>mdi-bell-check</v-icon>
+					</v-btn>
+				</v-fab-transition>
 			</v-card-text>
 			<v-divider></v-divider>
 			<v-card-text class="flex-glow-1 pa-0" style="overflow: auto; max-height: 100%">
-				<navbar-notification-list/>
+				<v-expand-transition>
+					<navbar-notification-list v-if="tab == 0"/>
+					<navbar-notification-list-log v-else-if="tab == 1"/>
+					<!-- TODO tambah notifikasi tab aplikasi -->
+				</v-expand-transition>
 			</v-card-text>
 			<v-divider></v-divider>
 			<v-card-text class="d-flex py-2">
-				<v-btn text>
+				<!-- TODO link ke halaman pemberitahuan -->
+				<v-btn text link>
 					Semua Pemberitahuan
 				</v-btn>
 				<v-spacer></v-spacer>
+				<!-- TODO link ke halaman pengaturan jika sudah login -->
 				<v-btn title="Pengaturan Pemberitahuan" icon disabled>
 					<v-icon>mdi-cog</v-icon>
 				</v-btn>
@@ -63,8 +74,9 @@
 </template>
 <script>
 import NavbarNotificationList from './list/NavbarNotificationList.vue';
+import NavbarNotificationListLog from './list/NavbarNotificationListLog.vue';
 export default {
-  components: { NavbarNotificationList },
+  	components: { NavbarNotificationList, NavbarNotificationListLog },
 	props: {
 		value: Boolean,
 	},
@@ -80,11 +92,15 @@ export default {
 	},
 	data() {
 		return {
+			tab: 0,
 		}
 	},
 	methods: {
 		checkAllNotification() {
 			// TODO: Check all notification
+		},
+		refreshNotification() {
+			// TODO: Refresh notification
 		},
 	},
 }
