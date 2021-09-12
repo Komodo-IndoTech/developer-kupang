@@ -14,7 +14,7 @@ export default {
 	name: 'PublicIndex',
 	data() {
 		return {
-			notification: true
+			notification: false
 		}
 	},
 	methods: {
