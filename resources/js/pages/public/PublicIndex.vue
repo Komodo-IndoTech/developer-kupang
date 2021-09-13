@@ -19,9 +19,30 @@ export default {
 	},
 	methods: {
 		loadWeather(){
+		},
+		showLogoOnConsole(){
+			console.log('%c%s', 'color: #0f0;', `                                                  
+              %%%%%%%%                            
+                   %%%%                           
+              %%%%   %%%%                         
+              %%%%%*  %%%%       %%%%             
+                 %%%%   %%%%    %%%%              
+                  *%%%.  %%%% %%%%                
+                    %%%%   %%%%%%   %             
+                   %%%%   %%%%%   #%%           Developer  
+                  %%%%   %%%%%   %%%%           Kupang
+                %%%%   %%%%%   %%%%             
+              %%%%%   %%%%%%%   %%%%            🔥🔥🔥  
+                    %%%%   %%%/  #%%%             
+              %%%%%%%%%     %%%%   %%             
+                             .%%%.  %             
+                               %%%%               
+                                (%%%%             
+			`)
 		}
 	},
 	created(){
+		this.showLogoOnConsole()
 		// this.loadWeather()
 	}
 }

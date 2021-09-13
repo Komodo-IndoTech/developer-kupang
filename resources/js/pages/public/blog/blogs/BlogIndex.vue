@@ -1,25 +1,33 @@
 <template>
 	<div>
-		<v-container class="py-10">
+		<v-container class="pt-10">
+			<!-- list blog pilihan -->
 			<list-blog-pilihan-public/>
 		</v-container>
+		<div class="sticky-top pb-10 pt-3" :style="{ top: `${$vuetify.application.top}px` }" style="z-index: 10; bottom: 0">
+			<div class="flex-middle">
+				<floating-action-make-blog/>
+			</div>
+		</div>
 		<v-divider></v-divider>
 		<v-container fluid>
 			<div class="d-grid-blog">
+				<!-- list blog -->
 				<list-blog-public/>
 				<div class="row-1-sm">
-					<side-kategori-blog-public class="sticky-top" :style="{ top: `${$vuetify.application.top}px` }"/>
+					<side-kategori-blog-public class="sticky-top" :style="{ top: `calc(${$vuetify.application.top}px + 20px)` }"/>
 				</div>
 			</div>
 		</v-container>
 	</div>
 </template>
 <script>
+import FloatingActionMakeBlog from '../../../../components/public/blog/fab/FloatingActionMakeBlog.vue'
 import SideKategoriBlogPublic from '../../../../components/public/blog/kategori/SideKategoriBlogPublic.vue'
 import ListBlogPilihanPublic from '../../../../components/public/blog/list/ListBlogPilihanPublic.vue'
 import ListBlogPublic from '../../../../components/public/blog/list/ListBlogPublic.vue'
 export default {
-  	components: { ListBlogPublic, SideKategoriBlogPublic, ListBlogPilihanPublic },
+  	components: { ListBlogPublic, SideKategoriBlogPublic, ListBlogPilihanPublic, FloatingActionMakeBlog },
 	created(){
 		console.log(this.$vuetify);
 	}
