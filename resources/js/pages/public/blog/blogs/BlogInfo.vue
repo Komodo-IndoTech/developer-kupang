@@ -1,8 +1,28 @@
 <template>
 	<div>
 		<v-container class="pa-lg-0 pa-3" style="max-width: 680px" id="blog-info">
+			<div class="d-flex">
+				<v-card link rounded="xl" class="mt-10 mb-4" color="grey lighten-5" flat :to="{ name: 'blog' }">
+					<v-card-title class="grey--text text--lighten-1">
+						<v-icon left>mdi-arrow-left</v-icon>
+						<span>
+							Blog
+						</span>
+					</v-card-title>
+				</v-card>
+				<v-spacer></v-spacer>
+				<!-- TODO perbaikan target scroll -->
+				<v-card link rounded="xl" class="mt-10 mb-4" color="grey lighten-5" flat @click="$vuetify.goTo('#bottom-blog-info', { duration: 500 })">
+					<v-card-title class="grey--text text--lighten-1">
+						<span>
+							Blog Sejenis
+						</span>
+						<v-icon right>mdi-arrow-down</v-icon>
+					</v-card-title>
+				</v-card>
+			</div>
 			<!-- title -->
-			<h1 class="mt-10">
+			<h1>
 				{{ item.title }}
 			</h1>
 			<div class="d-flex mb-10 mt-5">
@@ -26,7 +46,7 @@
 				</div>
 			</div>
 			<blog-separator/>
-			<div class="py-10"></div>
+			<div class="py-10" id="bottom-blog-info"></div>
 			<floating-menu-blog-info/>
 			<!-- TODO menambah info author -->
 			<!-- TODO menambah list / grid blog berelasi -->
