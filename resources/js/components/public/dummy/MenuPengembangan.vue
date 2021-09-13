@@ -1,7 +1,9 @@
 <template>
 	<v-menu content-class="shadow" v-bind="$attrs" offset-y top open-on-hover nudge-top="12" max-width="250">
 		<template #activator="{attrs, on}">
-			<slot :attrs="attrs" :on="on"/>
+			<span v-on="on" v-bind="attrs">
+				<slot/>
+			</span>
 		</template>
 		<v-card>
 			<div class="pa-3 d-flex">
@@ -17,7 +19,7 @@
 						</div>
 						<div>
 							<small>
-								Dalam Pengembangan 🧑‍🏭👨‍🏭👩‍🏭👷👷‍♂️👷‍♀️⚒️💪🔥💥
+								Dalam Pengembangan {{ label}}
 							</small>
 						</div>
 					</div>
@@ -29,9 +31,18 @@
 <script>
 export default {
 	name: 'MenuPengembangan',
+	props: {
+		label: {
+			type: String,
+			default: '🧑‍🏭👨‍🏭👩‍🏭👷👷‍♂️👷‍♀️⚒️💪🔥💥',
+		},
+		icons_count: {
+			type: Number,
+			default: 2,
+		},
+	},
 	data(){
 		return {
-			icons_count: 2,
 			icon_counter: 0,
 		}
 	},

@@ -7,15 +7,15 @@
 				</v-avatar>
 			</div>
 		</div>
-		<v-btn icon>
-			<v-icon>mdi-heart-outline</v-icon>
-		</v-btn>
+		<menu-pengembangan dark :label="'💔'" :icons_count="1">
+			<v-btn icon>
+				<v-icon>mdi-heart-outline</v-icon>
+			</v-btn>
+		</menu-pengembangan>
 		<menu-pengembangan dark>
-			<template #default="{attrs, on}">
-				<v-btn icon v-on="on" v-bind="attrs">
-					<v-icon>mdi-comment-outline</v-icon>
-				</v-btn>
-			</template>
+			<v-btn icon>
+				<v-icon>mdi-comment-outline</v-icon>
+			</v-btn>
 		</menu-pengembangan>
 		<v-btn icon>
 			<v-icon>mdi-bookmark-outline</v-icon>
