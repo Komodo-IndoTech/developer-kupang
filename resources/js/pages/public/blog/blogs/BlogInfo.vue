@@ -6,50 +6,9 @@
 				{{ item.title }}
 			</h1>
 			<div class="d-flex mb-10 mt-5">
-				<div>
-					<div class="flex-middle">
-						<v-avatar>
-							<v-img :src="item.image"></v-img>
-						</v-avatar>
-					</div>
-				</div>
-				<div class="px-3">
-					<div class="d-flex">
-						<div>
-							<div class="flex-middle">
-								{{ item.author }}
-							</div>
-						</div>
-						<div class="pl-3">
-							<v-chip color="teal" dark class="px-5" small>
-								Follow
-							</v-chip>
-						</div>
-					</div>
-					<div class="text-muted">
-						{{ item.date | date }}
-					</div>
-				</div>
+				<blog-author-list :item="item"/>
 				<v-spacer></v-spacer>
-				<div class="pl-3">
-					<div class="d-flex">
-						<v-btn icon>
-							<v-icon>mdi-twitter</v-icon>
-						</v-btn>
-						<v-btn icon>
-							<v-icon>mdi-facebook</v-icon>
-						</v-btn>
-						<v-btn icon>
-							<v-icon>mdi-linkedin</v-icon>
-						</v-btn>
-						<v-btn icon>
-							<v-icon>mdi-link</v-icon>
-						</v-btn>
-						<v-btn icon>
-							<v-icon>mdi-bookmark-plus-outline</v-icon>
-						</v-btn>
-					</div>
-				</div>
+				<blog-share-action/>
 			</div>
 			
 			<div class="">
@@ -66,18 +25,23 @@
 					<p v-else v-html="body"></p>
 				</div>
 			</div>
+			<blog-separator/>
 			<div class="py-10"></div>
 			<floating-menu-blog-info/>
+			<!-- TODO menambah info author -->
+			<!-- TODO menambah list / grid blog berelasi -->
 		</v-container>
 	</div>
 </template>
 <script>
 import BlogAds from '../../../../components/public/blog/ads/BlogAds.vue'
+import BlogAuthorList from '../../../../components/public/blog/author/BlogAuthorList.vue'
 import BlogSeparator from '../../../../components/public/blog/divider/BlogSeparator.vue'
 import FloatingMenuBlogInfo from '../../../../components/public/blog/fab/FloatingMenuBlogInfo.vue'
+import BlogShareAction from '../../../../components/public/blog/share/BlogShareAction.vue'
 import EmptyContentPengembangan from '../../../../components/public/dummy/EmptyContentPengembangan.vue'
 export default {
-  	components: { FloatingMenuBlogInfo, EmptyContentPengembangan, BlogSeparator, BlogAds },
+  	components: { FloatingMenuBlogInfo, EmptyContentPengembangan, BlogSeparator, BlogAds, BlogShareAction, BlogAuthorList },
 	data() {
 		return {
 			comments: true,
