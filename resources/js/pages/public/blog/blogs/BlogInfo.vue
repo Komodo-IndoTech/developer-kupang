@@ -1,14 +1,15 @@
 <template>
 	<div>
 		<v-container class="pa-lg-0 pa-3" style="max-width: 680px" id="blog-info">
+			<!-- title -->
 			<h1 class="mt-10">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facilis quaerat aperiam eos ut similique voluptas blanditiis enim, dolore ab odit ipsum eligendi placeat cum, ullam quo veritatis quidem doloremque.
+				{{ item.title }}
 			</h1>
 			<div class="d-flex mb-10 mt-5">
 				<div>
 					<div class="flex-middle">
 						<v-avatar>
-							<v-img src="https://picsum.photos/30"></v-img>
+							<v-img :src="item.image"></v-img>
 						</v-avatar>
 					</div>
 				</div>
@@ -16,7 +17,7 @@
 					<div class="d-flex">
 						<div>
 							<div class="flex-middle">
-								John Doe
+								{{ item.author }}
 							</div>
 						</div>
 						<div class="pl-3">
@@ -26,7 +27,7 @@
 						</div>
 					</div>
 					<div class="text-muted">
-						{{ Date.now() | date }}
+						{{ item.date | date }}
 					</div>
 				</div>
 				<v-spacer></v-spacer>
@@ -50,24 +51,20 @@
 					</div>
 				</div>
 			</div>
+			
 			<div class="">
-				<v-img src="https://picsum.photos/680/350" max-height="auto" max-width="100%" height="350" class="rounded-lg"/>
+				<v-img :src="item.image" max-height="auto" max-width="100%" height="350" class="rounded-lg"/>
 			</div>
+			<blog-separator/>
 
-			<div class="separator">
-				<div class="d-flex justify-center">
-					<div>
-						<div class="d-flex">
-							<div class="px-0" v-for="i in 3" :key="i">
-								<v-icon>mdi-circle-small</v-icon>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
+			<!-- body -->
 			<div>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, cupiditate incidunt quis molestiae ipsa consequuntur vero vel nobis expedita asperiores recusandae minus deserunt quasi, error fugit distinctio quidem veritatis suscipit.
+				<div v-for="(body, i) in item.body" :key="i">
+					<template v-if="body && body.type == 'ad'">
+						<blog-ads/>
+					</template>
+					<p v-else v-html="body"></p>
+				</div>
 			</div>
 			<div class="py-10"></div>
 			<floating-menu-blog-info/>
@@ -75,15 +72,35 @@
 	</div>
 </template>
 <script>
+import BlogAds from '../../../../components/public/blog/ads/BlogAds.vue'
+import BlogSeparator from '../../../../components/public/blog/divider/BlogSeparator.vue'
 import FloatingMenuBlogInfo from '../../../../components/public/blog/fab/FloatingMenuBlogInfo.vue'
+import EmptyContentPengembangan from '../../../../components/public/dummy/EmptyContentPengembangan.vue'
 export default {
-  	components: { FloatingMenuBlogInfo },
+  	components: { FloatingMenuBlogInfo, EmptyContentPengembangan, BlogSeparator, BlogAds },
 	data() {
 		return {
 			comments: true,
 			report: {
 				blog: false,
 			},
+			item: {
+				id: 1,
+				title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facilis quaerat aperiam eos ut similique voluptas blanditiis enim, dolore ab odit ipsum eligendi placeat cum, ullam quo veritatis quidem doloremque.',
+				description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facilis quaerat aperiam eos ut similique voluptas blanditiis enim, dolore ab odit ipsum eligendi placeat cum, ullam quo veritatis quidem doloremque.',
+				image: 'https://picsum.photos/680/350',
+				author: 'John Doe',
+				date: '2019-01-01',
+				body: [
+					'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facilis quaerat aperiam eos ut similique voluptas blanditiis enim, dolore ab odit ipsum eligendi placeat cum, ullam quo veritatis quidem doloremque.',
+					'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facilis quaerat aperiam eos ut similique voluptas blanditiis enim, dolore ab odit ipsum eligendi placeat cum, ullam quo veritatis quidem doloremque.',
+					{
+						type: 'ad',
+					},
+					'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facilis quaerat aperiam eos ut similique voluptas blanditiis enim, dolore ab odit ipsum eligendi placeat cum, ullam quo veritatis quidem doloremque.',
+					'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facilis quaerat aperiam eos ut similique voluptas blanditiis enim, dolore ab odit ipsum eligendi placeat cum, ullam quo veritatis quidem doloremque.',
+				]
+			}
 		}
 	},
 	created(){

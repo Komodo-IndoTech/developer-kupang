@@ -1,7 +1,7 @@
 <template>
 	<div class="pa-3 d-flex">
 		<div class="mx-auto w-100" style="max-width: 500px">
-			<v-alert prominent type="info" text v-bind="$attrs" class="w-100">
+			<v-alert prominent type="info" text v-bind="$attrs" class="w-100" rounded="xl">
 				Dalam Pengembangan
 			</v-alert>
 		</div>
