@@ -1,6 +1,6 @@
 <template>
 	<div class="d-flex flex-column colspan-2 px-lg-4">
-		<v-card color="" rounded="xl" class="mb-10" flat v-for="i in 1" :key="i">
+		<v-card color="" rounded="xl" class="mb-10" flat v-for="i in 1" :key="i" :to="{ name: 'blog.show', params: { username: 'agriedd', blog_slug: 'lorem-ipsum' } }">
 			<div class="d-flex w-100">
 				<div>
 					<v-card-text class="pb-0">

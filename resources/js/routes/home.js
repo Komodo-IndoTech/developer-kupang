@@ -8,6 +8,7 @@ import MengenaiKami from '../pages/public/about/AboutUs.vue';
  */
 import PublicBlog from '../pages/public/blog/BlogPublic.vue'
 import BlogIndex from '../pages/public/blog/blogs/BlogIndex.vue'
+import BlogInfo from '../pages/public/blog/blogs/BlogInfo.vue'
 import EventIndex from '../pages/public/blog/events/EventIndex.vue'
 /**
  * forum
@@ -55,6 +56,14 @@ export default [
 						}
 					},
 				]
+			},
+			{
+				path: 'blog/:username/:blog_slug',
+				component: BlogInfo,
+				name: 'blog.show',
+				meta: {
+					title: '# | by $ | Developer Kupang'
+				}
 			},
 			{
 				path: 'forum',

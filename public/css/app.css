@@ -308,6 +308,11 @@
           animation: none !important;
 }
 
+.separator {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .content-middle,
 .flex-middle {
   display: flex;
