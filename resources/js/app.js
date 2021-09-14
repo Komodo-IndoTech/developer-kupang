@@ -5,6 +5,8 @@ import { router, vuetify } from './plugins/pages/home'
 import datetime_mixin from './plugins/mixins/datetime'
 import number_mixin from './plugins/mixins/number'
 
+import store from './plugins/states/public'
+
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
@@ -15,6 +17,7 @@ const app = new Vue({
     },
     router,
     vuetify,
+    store,
     el: '#app',
     data: {
         nav: {

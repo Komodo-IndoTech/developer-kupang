@@ -49,6 +49,7 @@
 	</v-app-bar>
 </template>
 <script>
+import { mapActions, mapMutations } from 'vuex'
 export default {
 	props: {
 		notification: {
@@ -57,9 +58,9 @@ export default {
 		}
 	},
 	methods: {
-		openLoginDialog() {
-			// TODO : open login dialog
-		}
+		...mapActions({
+			openLoginDialog: 'auth/login/dialog/open'
+		}),
 	}
 }
 </script>

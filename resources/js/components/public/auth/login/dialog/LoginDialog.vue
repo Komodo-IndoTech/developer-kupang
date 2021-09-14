@@ -2,9 +2,6 @@
 	<div>
 		<v-dialog v-model="dialog" :max-width="$vuetify.breakpoint.width >= 850 ? 800 : 400" content-class="shadow-lg rounded-xl login-dialog" overlay-opacity=".86" overlay-color="#dcf4fe" scrollable transition="slide-y-reverse-transition">
 			<v-card class="" rounded="xl">
-				<div>
-
-				</div>
 				<v-card-text class="pa-0">
 					<v-fade-transition group mode="out-in" class="d-flex fill-height">
 						<div class="pa-10 w-100" style="max-width: 400px; min-width: 400px" key="login-form">
@@ -96,10 +93,33 @@
 	</div>
 </template>
 <script>
+import { mapMutations, mapState } from 'vuex'
 export default {
+	computed: {
+		dialog: {
+			/**
+			 * get value from this.isOpen
+			 * set to this.setDialog()
+			 * 
+			 */
+			get () {
+				return this.isOpen
+			},
+			set (value) {
+				this.setDialog(value)
+			}
+		},
+		...mapState({
+			isOpen: state => state.auth.login.dialog.isOpen,
+		})
+	},
+	methods: {
+		...mapMutations({
+			setDialog: 'auth/login/dialog/setIsOpen'
+		}),
+	},
 	data() {
 		return {
-			dialog: true
 		}
 	},
 }
