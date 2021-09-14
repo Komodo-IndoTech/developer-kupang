@@ -1,8 +1,38 @@
 <template>
 	<div>
-		<v-dialog v-model="dialog" :max-width="$vuetify.breakpoint.width >= 850 ? 800 : 400" content-class="shadow-lg rounded-xl login-dialog" overlay-opacity=".86" overlay-color="#dcf4fe" scrollable transition="slide-y-reverse-transition">
-			<v-card class="" rounded="xl">
-				<v-card-text class="pa-0">
+		<v-dialog v-model="dialog" 
+			:max-width="minimize ? 200 : $vuetify.breakpoint.width >= 850 ? 800 : 400" 
+			:content-class="`shadow rounded-xl login-dialog ${minimize ? 'minimize' : null}`" 
+			overlay-opacity=".9" 
+			overlay-color="#dcf4fe" 
+			scrollable 
+			transition="slide-y-reverse-transition">
+			<v-card class="" rounded="xl" :color="minimize ? null : null" :dark="minimize">
+				<menu-tooltip :label="'Minimize Dialog 🤏'" v-if="!minimize" :icons_count="1">
+					<v-btn fab absolute right style="top: 16px" class="shadow-lg" @click="alwayShow = true; dialog = false">
+						<v-icon>mdi-unfold-less-horizontal</v-icon>
+					</v-btn>
+				</menu-tooltip>
+				<div v-show="minimize">
+					<div class="d-flex pa-2 justify-center">
+						<menu-tooltip :label="'Dialog login'" :icons_count="1">
+							<v-btn icon @click="dialog = true">
+								<v-icon>mdi-drag-horizontal</v-icon>
+							</v-btn>
+						</menu-tooltip>
+						<div>
+							<div class="flex-middle">
+								Login ✌️
+							</div>
+						</div>
+						<v-spacer></v-spacer>
+						<v-btn icon @click="alwayShow = false">
+							<v-icon small>mdi-close</v-icon>
+						</v-btn>
+					</div>
+					<v-divider></v-divider>
+				</div>
+				<v-card-text class="pa-0" v-if="!minimize">
 					<v-fade-transition group mode="out-in" class="d-flex fill-height">
 						<div class="pa-10 w-100" style="max-width: 400px; min-width: 400px" key="login-form">
 							<div class="flex-middle">
@@ -94,7 +124,9 @@
 </template>
 <script>
 import { mapMutations, mapState } from 'vuex'
+import MenuTooltip from '../../../dummy/MenuTooltip.vue'
 export default {
+  	components: { MenuTooltip },
 	computed: {
 		dialog: {
 			/**
@@ -109,6 +141,9 @@ export default {
 				this.setDialog(value)
 			}
 		},
+		minimize(){
+			return !this.dialog && this.alwayShow
+		},
 		...mapState({
 			isOpen: state => state.auth.login.dialog.isOpen,
 		})
@@ -120,6 +155,7 @@ export default {
 	},
 	data() {
 		return {
+			alwayShow: true,
 		}
 	},
 }
@@ -127,5 +163,17 @@ export default {
 <style lang="scss">
 	.login-dialog{
 		min-height: 500px;
+		&.minimize{
+			align-self: end;
+			display: flex!important;
+			transform: translateY(calc(45%));
+			opacity: .25;
+			// margin: 0 0;
+			min-height: unset;
+			&:hover{
+				opacity: 1;
+				transform: translateY(0%);
+			}
+		}
 	}
 </style>
