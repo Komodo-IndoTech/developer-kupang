@@ -40,7 +40,7 @@
 					</v-btn>
 				</v-badge>
 				<template>
-					<v-btn text class="ml-3 px-4">
+					<v-btn text class="ml-3 px-4" @click="openLoginDialog()">
 						Masuk
 					</v-btn>
 				</template>
@@ -56,5 +56,10 @@ export default {
 			default: false
 		}
 	},
+	methods: {
+		openLoginDialog() {
+			// TODO : open login dialog
+		}
+	}
 }
 </script>
