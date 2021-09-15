@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="pa-5">
-			<div class="rounded-xl" style="position: relative; overflow: hidden; background-size: cover; background-position: left; background-repeat: repeat-x" :style="{ 'background-image': `linear-gradient(20deg, rgba(0,0,0,.25) 0px, #fff 800px), url('https://picsum.photos/400/800')` }">
+			<!-- <div class="rounded-xl" style="position: relative; overflow: hidden; background-size: cover; background-position: left; background-repeat: repeat-x" :style="{ 'background-image': `linear-gradient(20deg, rgba(0,0,0,.25) 0px, #fff 800px), url('https://picsum.photos/400/800')` }">
 				<div class="d-flex pa-3">
 					<div class="px-4">
 						<div class="content-middle">
@@ -65,7 +65,8 @@
 						</v-card-text>
 					</v-card><div style="width: 10rem"></div>
 				</div>
-			</div>
+			</div> -->
+			
 		</div>
 		<v-container fluid>
 			
