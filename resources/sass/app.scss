@@ -84,16 +84,16 @@
 
 .v-application {
 	.list-active{
-		background-color: #3F51B5;
+		background: linear-gradient(45deg, var(--v-primary-base), #7986CB);
 		// --v-primary-base: #fff;
 		color: #fff!important;
-		border-radius: 3rem!important;
+		border-radius: 1rem!important;
 		padding-left: 1.5rem!important;
 		position: relative;
-		margin-left: .5rem;
+		// margin-left: .5rem;
 		transition: all .2s ease;
 		&::before{
-			border-radius: 3rem!important;
+			border-radius: 1rem!important;
 		}
 		&::after{
 			content: '';
@@ -101,13 +101,13 @@
 			box-shadow: 0 0 1rem rgba(0,0,0,0.5);
 			top: 50%;
 			left: 0;
-			width: 4px;
+			width: 6px;
 			height: 2rem!important;
 			background: var(--v-primary-base);
 			opacity: 1!important;
-			border-radius: 0 4px 4px 0!important;
+			border-radius: 0 5px 5px 0!important;
 			min-height: unset;
-			transform: translateX(calc(-8px + -.5rem)) translateY(-50%);
+			transform: translateX(calc(-32px)) translateY(-50%);
 		}
 	}
 }

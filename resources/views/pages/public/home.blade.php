@@ -7,13 +7,10 @@
 
 @section('content')
 	<v-app>
-		<v-navigation-drawer app mini floating>
+		<v-navigation-drawer app mini floating class="indigo lighten-5">
 			<div class="d-flex flex-column fill-height">
 				<v-spacer></v-spacer>
-				<v-list nav>
-					<v-subheader>
-						Menu
-					</v-subheader>
+				<v-list nav class="px-8">
 					<v-list-item-group color="primary">
 						<v-list-item link :to="{ name: 'beranda' }" exact active-class="list-active">
 							<v-list-item-icon>
@@ -103,6 +100,19 @@
 							</v-list-item-content>
 						</v-list-item>
 					</v-list-item-group>
+					<v-subheader>
+						Pintasan Saya
+					</v-subheader>
+					<v-list-item link>
+						<v-list-item-icon>
+							<v-icon>mdi-pin</v-icon>
+						</v-list-item-icon>
+						<v-list-item-content>
+							<v-list-item-title>
+								#Javascript
+							</v-list-item-title>
+						</v-list-item-content>
+					</v-list-item>
 				</v-list>
 			</div>
 			{{-- <div class="d-flex flex-column justify-center fill-height">
