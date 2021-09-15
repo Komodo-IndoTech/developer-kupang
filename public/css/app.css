@@ -307,6 +307,104 @@
   -webkit-animation: none !important;
           animation: none !important;
 }
+@-webkit-keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounceLeft {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(30px);
+  }
+  60% {
+    transform: translateX(15px);
+  }
+}
+@keyframes bounceLeft {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(30px);
+  }
+  60% {
+    transform: translateX(15px);
+  }
+}
+/* /left bounce */
+/* right bounce */
+@-webkit-keyframes bounceRight {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-30px);
+  }
+  60% {
+    transform: translateX(-15px);
+  }
+}
+@keyframes bounceRight {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-30px);
+  }
+  60% {
+    transform: translateX(-15px);
+  }
+}
+/* /right bounce */
+/* assign bounce */
+.bounce-arrow-right:not(.hover) {
+  -webkit-animation: bounceRight 2s infinite;
+  animation: bounceRight 2s infinite;
+}
+.bounce-arrow-right.hover:hover {
+  -webkit-animation: bounceRight 2s forwards;
+  animation: bounceRight 2s forwards;
+}
+
+/* make .bounce-arrow-left same as .bounce-arrow-right with bounceRight as bounceLeft */
+.bounce-arrow-left:not(.hover) {
+  -webkit-animation: bounceLeft 2s infinite;
+  animation: bounceLeft 2s infinite;
+}
+.bounce-arrow-left.hover:hover {
+  -webkit-animation: bounceLeft 2s forwards;
+  animation: bounceLeft 2s forwards;
+}
+
+/* make .bounce-arrow-down same as .bounce-arrow-right with bounceRight as bounceDown */
+.bounce-arrow-down:not(.hover) {
+  -webkit-animation: bounceDown 2s infinite;
+  animation: bounceDown 2s infinite;
+}
+.bounce-arrow-down.hover:hover {
+  -webkit-animation: bounceDown 2s forwards;
+  animation: bounceDown 2s forwards;
+}
 
 .separator {
   padding-top: 3rem;

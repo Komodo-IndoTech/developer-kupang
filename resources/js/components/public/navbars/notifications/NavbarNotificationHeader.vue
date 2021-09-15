@@ -3,12 +3,19 @@
 		<v-card-text>
 			<div class="d-flex">
 				<div>
-					{{ Date.now() | date('id-ID', false, true) }}
+					<div class="flex-middle">
+						{{ Date.now() | date('id-ID', false, true) }}
+					</div>
 				</div>
 				<v-spacer></v-spacer>
 				<div class="pl-3">
-					<v-icon>mdi-weather-sunny</v-icon>
+					<div class="flex-middle">
+						<v-icon>mdi-weather-sunny</v-icon>
+					</div>
 				</div>
+				<v-btn icon @click="sidebar = false" v-if="$vuetify.breakpoint.width <= 600">
+					<v-icon>mdi-close</v-icon>
+				</v-btn>
 			</div>
 		</v-card-text>
 		<v-divider></v-divider>
@@ -32,6 +39,18 @@ export default {
 		value: Boolean,
 	},
 	computed: {
+		/**
+		 * get value from v-model
+		 * 
+		 */
+		sidebar: {
+			get() {
+				return this.value;
+			},
+			set(value) {
+				this.$emit('input', value);
+			},
+		},
 	},
 	data() {
 		return {

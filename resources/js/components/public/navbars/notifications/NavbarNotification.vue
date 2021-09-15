@@ -1,7 +1,18 @@
 <template>
-	<v-navigation-drawer v-model="notification" width="400" right mobile-breakpoint="600" clipped style="z-index: 10" class="notification-drawer pa-3 elevation-0" overlay-opacity=".25" floating bottom fixed temporary :style="{'max-height': $vuetify.breakpoint.width <= 600 ? '90%' : `calc(100vh + 0)`}">
+	<v-navigation-drawer v-model="notification" 
+		width="400" 
+		right 
+		mobile-breakpoint="600" 
+		clipped style="z-index: 10" 
+		class="notification-drawer pa-3 elevation-0 glass-sm"
+		overlay-opacity=".25" 
+		floating 
+		bottom 
+		fixed 
+		temporary 
+		:style="{'max-height': $vuetify.breakpoint.width <= 600 ? '100%' : `calc(100vh + 0)`}">
 		<template #prepend>
-			<navbar-notification-header>
+			<navbar-notification-header v-model="notification">
 				<v-tabs class="rounded-lg fill-height" v-model="tab">
 					<v-tab>Umum</v-tab>
 					<v-tab>Log</v-tab>
@@ -9,7 +20,7 @@
 				</v-tabs>
 			</navbar-notification-header>
 		</template>
-		<v-card rounded="lg" class="d-flex flex-column shadow-lg" style="max-height: 100%" outlined>
+		<v-card rounded="lg" class="d-flex flex-column shadow-lg" style="max-height: 100%">
 			<v-card-text class="d-flex py-2">
 				<div>
 					<div class="flex-middle">

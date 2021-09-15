@@ -4,7 +4,7 @@
 			<div class="d-flex">
 				<v-card link rounded="xl" class="mt-10 mb-4" color="grey lighten-5" flat :to="{ name: 'blog' }">
 					<v-card-title class="grey--text text--lighten-1">
-						<v-icon left>mdi-arrow-left</v-icon>
+						<v-icon left class="bounce-arrow-left">mdi-arrow-left</v-icon>
 						<span>
 							Blog
 						</span>
@@ -17,7 +17,7 @@
 						<span>
 							Blog Sejenis
 						</span>
-						<v-icon right>mdi-arrow-down</v-icon>
+						<v-icon right class="bounce-arrow-down">mdi-arrow-down</v-icon>
 					</v-card-title>
 				</v-card>
 			</div>
