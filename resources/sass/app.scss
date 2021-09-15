@@ -7,6 +7,7 @@
 @import "./animations/no_animation_on_hover.scss";
 @import "./animations/bounce_arrow.scss";
 @import "./blogs/blog_separator.scss";
+// @import "@vuetify/"
 
 .content-middle,
 .flex-middle{
@@ -79,4 +80,34 @@
 	transition: all .25s ease;
 	background: rgba($color: #000, $alpha: .5);
 	border-radius: 4px;
+}
+
+.v-application {
+	.list-active{
+		background-color: #3F51B5;
+		// --v-primary-base: #fff;
+		color: #fff!important;
+		border-radius: 3rem!important;
+		padding-left: 1.5rem!important;
+		position: relative;
+		margin-left: .5rem;
+		transition: all .2s ease;
+		&::before{
+			border-radius: 3rem!important;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+			top: 50%;
+			left: 0;
+			width: 4px;
+			height: 2rem!important;
+			background: var(--v-primary-base);
+			opacity: 1!important;
+			border-radius: 0 4px 4px 0!important;
+			min-height: unset;
+			transform: translateX(calc(-8px + -.5rem)) translateY(-50%);
+		}
+	}
 }

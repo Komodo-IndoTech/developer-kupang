@@ -15,7 +15,7 @@
 						Menu
 					</v-subheader>
 					<v-list-item-group color="primary">
-						<v-list-item link :to="{ name: 'beranda' }" exact>
+						<v-list-item link :to="{ name: 'beranda' }" exact active-class="list-active">
 							<v-list-item-icon>
 								<v-icon>mdi-home-outline</v-icon>
 							</v-list-item-icon>
@@ -25,7 +25,7 @@
 								</v-list-item-title>
 							</v-list-item-content>
 						</v-list-item>
-						<v-list-item link :to="{ name: 'mengenai' }">
+						<v-list-item link :to="{ name: 'mengenai' }" active-class="list-active">
 							<v-list-item-icon>
 								<v-icon>mdi-account-group-outline</v-icon>
 							</v-list-item-icon>
@@ -35,7 +35,7 @@
 								</v-list-item-title>
 							</v-list-item-content>
 						</v-list-item>
-						<v-list-item link :to="{ name: 'blog' }">
+						<v-list-item link :to="{ name: 'blog' }" active-class="list-active">
 							<v-scale-transition mode="out-in">
 								<v-list-item-icon :key="nav.blog.counter">
 									<v-icon v-if="nav.blog.counter == 0">mdi-newspaper-variant-outline</v-icon>
@@ -49,7 +49,7 @@
 								</v-list-item-title>
 							</v-list-item-content>
 						</v-list-item>
-						<v-list-item link :to="{ name: 'forum' }">
+						<v-list-item link :to="{ name: 'forum' }" active-class="list-active">
 							<v-list-item-icon>
 								<v-icon>mdi-forum-outline</v-icon>
 							</v-list-item-icon>

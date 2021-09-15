@@ -5,6 +5,11 @@
 		<router-view/>
 		<login-dialog/>
 		<!-- <bottom-navbar/> -->
+		<!-- <v-list>
+			<v-list-item active-class="">
+
+			</v-list-item>
+		</v-list> -->
 	</div>
 </template>
 <script>

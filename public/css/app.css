@@ -492,3 +492,30 @@
   background: rgba(0, 0, 0, 0.5);
   border-radius: 4px;
 }
+
+.v-application .list-active {
+  background-color: #3F51B5;
+  color: #fff !important;
+  border-radius: 3rem !important;
+  padding-left: 1.5rem !important;
+  position: relative;
+  margin-left: 0.5rem;
+  transition: all 0.2s ease;
+}
+.v-application .list-active::before {
+  border-radius: 3rem !important;
+}
+.v-application .list-active::after {
+  content: "";
+  position: absolute;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  top: 50%;
+  left: 0;
+  width: 4px;
+  height: 2rem !important;
+  background: var(--v-primary-base);
+  opacity: 1 !important;
+  border-radius: 0 4px 4px 0 !important;
+  min-height: unset;
+  transform: translateX(calc(-8px + -.5rem)) translateY(-50%);
+}
