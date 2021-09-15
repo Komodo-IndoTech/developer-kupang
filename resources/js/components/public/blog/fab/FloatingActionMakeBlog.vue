@@ -1,5 +1,5 @@
 <template>
-	<v-card rounded="pill" color="blue" class="shadow-lg" link dark>
+	<v-card rounded="pill" color="blue" class="shadow-lg" link dark v-bind="$attrs" @click="">
 		<v-card-text class="d-flex px-lg-10 white--text">
 			<div>
 				<div class="flex-middle">

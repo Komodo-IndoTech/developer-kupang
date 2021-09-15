@@ -13,7 +13,7 @@
 						<v-icon>mdi-weather-sunny</v-icon>
 					</div>
 				</div>
-				<v-btn icon @click="sidebar = false" v-if="$vuetify.breakpoint.width <= 600">
+				<v-btn icon @click="sidebar = false" v-if="$vuetify.breakpoint.width <= 600" class="ml-3">
 					<v-icon>mdi-close</v-icon>
 				</v-btn>
 			</div>

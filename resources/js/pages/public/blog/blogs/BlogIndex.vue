@@ -4,9 +4,11 @@
 			<!-- list blog pilihan -->
 			<list-blog-pilihan-public/>
 		</v-container>
-		<div class="sticky-top pb-10 pt-3" :style="{ top: `${$vuetify.application.top}px` }" style="z-index: 10; bottom: 0; pointer-events: none;">
+		<div class="sticky-top pb-10 pt-3" 
+			:style="{ top: `${$vuetify.application.top}px`, bottom: `${$vuetify.application.bottom}px` }" 
+			style="z-index: 2; bottom: 0; pointer-events: none;">
 			<div class="flex-middle" style="pointer-events: none;">
-				<floating-action-make-blog/>
+				<floating-action-make-blog style="pointer-events: visible;"/>
 			</div>
 		</div>
 		<v-divider></v-divider>

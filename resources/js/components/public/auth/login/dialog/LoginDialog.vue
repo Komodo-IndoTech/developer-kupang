@@ -78,7 +78,16 @@
 								</div>
 							</div>
 						</div>
-						<v-card flat rounded="0" color="#806df3" class="flex-grow" style="min-width: 0px; position: relative" key="login-banner" dark
+						<v-card flat 
+							rounded="0" 
+							class="flex-grow" 
+							style="background: url('/img/svg/bg.svg'), linear-gradient(45deg, #5138ed, #806df3); 
+								min-width: 0px; 
+								position: relative; 
+								background-position: bottom left!important; 
+								background-repeat: no-repeat!important" 
+							key="login-banner" 
+							dark
 							v-if="$vuetify.breakpoint.width >= 850">
 							<v-card-text class="fill-height d-flex flex-column" style="background-image: url('/img/3d/comment-crop.png'); background-position: 173% 133%; background-repeat: no-repeat; background-size: 300px">
 								<div class="pa-10 flex-grow fill-height">
@@ -108,7 +117,7 @@
 										<span>
 											Inspirasi Desain:
 										</span>
-										<a href="https://dribbble.com/shots/15979404-Dashboard-Login?utm_source=Clipboard_Shot&utm_campaign=batuhankara&utm_content=Dashboard%3A%20Login&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=batuhankara&utm_content=Dashboard%3A%20Login&utm_medium=Social_Share" class="pink--text text--lighten-4 text-decoration-none">
+										<a href="https://dribbble.com/shots/15979404-Dashboard-Login?utm_source=Clipboard_Shot&utm_campaign=batuhankara&utm_content=Dashboard%3A%20Login&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=batuhankara&utm_content=Dashboard%3A%20Login&utm_medium=Social_Share" class="pink--text text--lighten-4 text-decoration-none" target="_blank">
 											Batuhan Kara @ Dribbble
 										</a>
 									</div>

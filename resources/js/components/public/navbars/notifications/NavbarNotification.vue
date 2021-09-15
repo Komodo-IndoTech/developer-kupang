@@ -4,13 +4,14 @@
 		right 
 		mobile-breakpoint="600" 
 		clipped style="z-index: 10" 
-		class="notification-drawer pa-3 elevation-0 glass-sm"
-		overlay-opacity=".25" 
+		class="notification-drawer pa-3 elevation-0"
+		overlay-opacity=".75" 
+		overlay-color="black"
 		floating 
 		bottom 
 		fixed 
 		temporary 
-		:style="{'max-height': $vuetify.breakpoint.width <= 600 ? '100%' : `calc(100vh + 0)`}">
+		:style="{'max-height': $vuetify.breakpoint.width <= 600 ? `calc(100vh - ${$vuetify.application.bottom}px)` : `calc(100vh + 0)`}">
 		<template #prepend>
 			<navbar-notification-header v-model="notification">
 				<v-tabs class="rounded-lg fill-height" v-model="tab">
@@ -102,6 +103,13 @@ export default {
 
 		.v-navigation-drawer__content{
 			overflow: hidden!important;
+		}
+	}
+	// make media screen for 600px and below
+	@media only screen and (max-width: 600px) {
+		.notification-drawer{
+			bottom: auto!important;
+			bottom: unset!important;
 		}
 	}
 </style>

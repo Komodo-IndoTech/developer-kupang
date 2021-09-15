@@ -4,6 +4,7 @@
 		<navbar-notification v-model="notification"/>
 		<router-view/>
 		<login-dialog/>
+		<!-- <bottom-navbar/> -->
 	</div>
 </template>
 <script>
@@ -11,8 +12,9 @@ import Navbar from '../../components/public/navbars/Navbar.vue'
 import axios from 'axios'
 import NavbarNotification from '../../components/public/navbars/notifications/NavbarNotification.vue'
 import LoginDialog from '../../components/public/auth/login/dialog/LoginDialog.vue'
+import BottomNavbar from '../../components/public/navbars/bottom/BottomNavbar.vue'
 export default {
-  	components: { Navbar, NavbarNotification, LoginDialog },
+  	components: { Navbar, NavbarNotification, LoginDialog, BottomNavbar },
 	name: 'PublicIndex',
 	data() {
 		return {
