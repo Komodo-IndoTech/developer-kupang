@@ -1,4 +1,13 @@
 @import "./loading/loading_page.scss";
+// @import "./plugins/gist-dark-theme.scss";
+@import "./animations/ringing_bell.scss";
+// @import "./animations/ringing_bell_reverse.scss";
+@import "./animations/hand_wave.scss";
+@import "./animations/fire.scss";
+@import "./animations/no_animation_on_hover.scss";
+@import "./animations/bounce_arrow.scss";
+@import "./blogs/blog_separator.scss";
+// @import "@vuetify/"
 
 .content-middle,
 .flex-middle{
@@ -19,8 +28,13 @@
 }
 
 .sticky-top{
-	position: sticky;
+	position: sticky!important;
 	top: 0;
+	z-index: 1;
+}
+.sticky-bottom{
+	position: sticky!important;
+	bottom: 0;
 	z-index: 1;
 }
 
@@ -28,11 +42,72 @@
 	background: linear-gradient(45deg, rgba(255,255,255, .5), rgba(255,255,255, .9))!important;
 	backdrop-filter: blur(10px);
 }
+.v-application .glass-sm{
+	background: linear-gradient(45deg, rgba(255,255,255, .25), rgba(255,255,255, .5))!important;
+	backdrop-filter: blur(10px);
+}
 
 .shadow{
 	box-shadow: 0px 1rem 2rem rgba(0,0,0, .015)!important;
+	&-md{
+		box-shadow: 0px 2rem 3rem rgba(0,0,0, .05)!important;
+	}
+	&-lg{
+		box-shadow: 0px 2rem 4rem rgba(0,0,0, .15)!important;
+	}
 }
 
 .flex-wrap{
 	flex-wrap: wrap;
+}
+.overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.15);
+	z-index: 1;
+	&.blur:hover{
+		backdrop-filter: blur(2px);
+	}
+}
+
+::-webkit-scrollbar{
+	width: .5rem;
+}
+::-webkit-scrollbar-thumb{
+	transition: all .25s ease;
+	background: rgba($color: #000, $alpha: .5);
+	border-radius: 4px;
+}
+
+.v-application {
+	.list-active{
+		background-color: #3F51B5;
+		// --v-primary-base: #fff;
+		color: #fff!important;
+		border-radius: 3rem!important;
+		padding-left: 1.5rem!important;
+		position: relative;
+		margin-left: .5rem;
+		transition: all .2s ease;
+		&::before{
+			border-radius: 3rem!important;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+			top: 50%;
+			left: 0;
+			width: 4px;
+			height: 2rem!important;
+			background: var(--v-primary-base);
+			opacity: 1!important;
+			border-radius: 0 4px 4px 0!important;
+			min-height: unset;
+			transform: translateX(calc(-8px + -.5rem)) translateY(-50%);
+		}
+	}
 }

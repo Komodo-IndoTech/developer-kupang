@@ -29,9 +29,10 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-    {{-- <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet"> --}}
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
     {{-- jika cdn jsdelivr di block provider --}}
-    <link href="https://cdn.materialdesignicons.com/5.6.55/css/materialdesignicons.min.css" rel="stylesheet">
+    {{-- <link href="https://cdn.materialdesignicons.com/5.6.55/css/materialdesignicons.min.css" rel="stylesheet"> --}}
+    {{-- <link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-eae3f338e9b8dca4490f3e8422af7f3b.css""> --}}
 
     @stack('css')
 </head>
@@ -39,5 +40,8 @@
     <div id="app">
         @yield('content')
     </div>
+	<div class="" style="padding: 2rem; display: none">
+		<script src="https://gist.github.com/agriedd/324744ea0bfaa89553f2ad45b3cfa771.js"></script>
+	</div>
 </body>
 </html>

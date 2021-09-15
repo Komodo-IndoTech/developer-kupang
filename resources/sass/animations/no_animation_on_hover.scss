@@ -1,0 +1,8 @@
+.no-animation-on-hover:hover{
+	animation: none !important;
+	&.-r{
+		* {
+			animation: none !important;
+		}
+	}
+}

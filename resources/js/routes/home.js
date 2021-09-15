@@ -8,6 +8,7 @@ import MengenaiKami from '../pages/public/about/AboutUs.vue';
  */
 import PublicBlog from '../pages/public/blog/BlogPublic.vue'
 import BlogIndex from '../pages/public/blog/blogs/BlogIndex.vue'
+import BlogInfo from '../pages/public/blog/blogs/BlogInfo.vue'
 import EventIndex from '../pages/public/blog/events/EventIndex.vue'
 /**
  * forum
@@ -15,6 +16,11 @@ import EventIndex from '../pages/public/blog/events/EventIndex.vue'
 import PublicForum from '../pages/public/forum/ForumPublic.vue'
 import ForumIndex from '../pages/public/forum/forum/ForumIndex.vue'
 import TagsIndex from '../pages/public/forum/tags/TagsIndex.vue'
+
+import PublicTutorial from '../pages/public/forum/tutorial/TutorialPublic.vue'
+import TutorialIndex from '../pages/public/forum/tutorial/tutorial/TutorialIndex.vue'
+import TutorialInfo from '../pages/public/forum/tutorial/tutorial/TutorialInfo.vue'
+import RequestIndex from '../pages/public/forum/tutorial/request/RequestIndex.vue'
 
 export default [
 	{
@@ -34,7 +40,7 @@ export default [
 				component: PublicBlog,
 				children: [
 					{
-						path: '/event',
+						path: 'event',
 						component: EventIndex,
 						name: 'event',
 						meta: {
@@ -52,11 +58,41 @@ export default [
 				]
 			},
 			{
+				path: 'blog/:username/:blog_slug',
+				component: BlogInfo,
+				name: 'blog.show',
+				meta: {
+					title: '# | by $ | Developer Kupang'
+				}
+			},
+			{
 				path: 'forum',
 				component: PublicForum,
 				children: [
 					{
-						path: '/tag',
+						path: 'tutorial',
+						component: PublicTutorial,
+						children: [
+							{
+								path: 'permintaan',
+								component: RequestIndex,
+								name: 'permintaan',
+								meta: {
+									title: 'Developer Kupang - Tutorial'
+								}
+							},
+							{
+								path: '',
+								component: TutorialIndex,
+								name: 'tutorial',
+								meta: {
+									title: 'Developer Kupang - Tutorial'
+								}
+							},
+						]
+					},
+					{
+						path: 'tag',
 						component: TagsIndex,
 						name: 'tag',
 						meta: {
@@ -72,6 +108,14 @@ export default [
 						}
 					},
 				]
+			},
+			{
+				path: 'forum/tutorial/:id_tutorial',
+				component: TutorialInfo,
+				name: 'tutorial.show',
+				meta: {
+					title: 'Developer Kupang - Tutorial #'
+				}
 			},
 			{
 				path: '',

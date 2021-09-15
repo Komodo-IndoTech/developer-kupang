@@ -13,7 +13,7 @@
 							</div>
 						</div>
 					</v-card-text>
-					<v-card-title class="pb-0">
+					<v-card-title class="pb-0" style="cursor: pointer;" @click="$router.push({ name: 'blog.show', params: { username: 'agriedd', blog_slug: 'lorem-ipsum' } })">
 						<span class="text-h5 font-weight-black">Lorem ipsum dolor sit amet, consectetur adipisicing.</span>
 					</v-card-title>
 					<v-card-text class="pt-0 pb-1">

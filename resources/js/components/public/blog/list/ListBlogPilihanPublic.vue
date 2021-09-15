@@ -11,115 +11,76 @@
 			</v-subheader>
 		</div>
 		<div class="d-grid-pilihan-blog px-lg-4">
-			<v-card color="" rounded="xl" flat v-for="i in 1" :key="i">
-				<div class="d-flex w-100">
-					<div>
-						<v-card-text class="pr-0 pt-3">
-							<span class="text-h4 font-weight-black grey--text text--lighten-3">
-								0{{ i }}
-							</span>
-						</v-card-text>
-					</div>
-					<div>
-						<v-card-text class="pb-0">
-							<div class="d-flex">
-								<v-avatar color="grey lighten-2" size="24">
-									<img src="https://picsum.photos/24" alt="Vue Logo">
-								</v-avatar>
-								<div class="pl-3 d-flex flex-column">
-									Lorem, ipsum dolor.
-								</div>
-							</div>
-						</v-card-text>
-						<v-card-text class="py-2">
-							<span class="font-weight-bold">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deserunt assumenda cum atque ea officiis molestiae temporibus at tempore velit?
-							</span>
-						</v-card-text>
-						<v-card-text class="pt-0 d-flex">
-							<div>
-								<div class="content-middle">
-									{{ Date.now() | date }} 
-								</div>
-							</div>
-							<div>
-								<div class="content-middle">
-									<v-icon>mdi-circle-small</v-icon>
-								</div>
-							</div>
-							<div>
-								<div class="content-middle">
-									1 min read
-								</div>
-							</div>
-							<div class="px-3">
-								<div class="content-middle">
-									<v-icon x-small>mdi-star</v-icon>
-								</div>
-							</div>
-						</v-card-text>
-					</div>
-				</div>
-			</v-card>
-			<v-card color="" rounded="xl" flat v-for="i in 1" :key="i">
-				<div class="d-flex w-100">
-					<div>
-						<v-card-text class="pr-0 pt-3">
-							<span class="text-h4 font-weight-black grey--text text--lighten-3">
-								00
-							</span>
-						</v-card-text>
-					</div>
-					<div class="grow">
-						<div class="px-4 py-4" style="max-width: 250px">
-							<v-skeleton-loader type="text"></v-skeleton-loader>
-						</div>
-						<div class="px-4 pb-4">
-							<v-skeleton-loader type="text@2"></v-skeleton-loader>
-						</div>
-						<div class="px-4" style="max-width: 100px">
-							<v-skeleton-loader type="text"></v-skeleton-loader>
-						</div>
-					</div>
-				</div>
-			</v-card>
-			<!-- <v-card color="" rounded="xl" class="mb-10" flat v-for="i in 5" :key="i+5">
-				<div class="d-flex w-100">
-					<div class="grow">
-						<div style="width: 100%">
-							<div class="px-4" style="max-width: 250px">
-								<v-skeleton-loader type="text"></v-skeleton-loader>
-							</div>
-							<v-skeleton-loader type="card-heading"></v-skeleton-loader>
-							<div class="px-4">
-								<v-skeleton-loader type="text"></v-skeleton-loader>
-							</div>
-							<div class="px-4">
-								<v-skeleton-loader type="sentences"></v-skeleton-loader>
-							</div>
-						</div>
-					</div>
-					<div>
-						<v-card-text class="pl-0">
-							<div style="width: 150px; height: 150px">
-								<v-skeleton-loader type="image" max-height="150px"></v-skeleton-loader>
-							</div>
-						</v-card-text>
-					</div>
-				</div>
-			</v-card> -->
+			<template v-if="items && items.length">
+				<blog-item-number v-for="(item, index) in items" :index="index + 1" :key="item.id"/>
+				<!-- TODO tambah item placeholder agar memenuhi container -->
+			</template>
+			<template v-else-if="loading">
+				<blog-item-number v-for="(item, index) in 4" :key="index"/>
+			</template>
+			<!-- TODO informasi blog pilihan kosong -->
+			<template v-else>
+				<empty-content/>
+			</template>
 		</div>
 	</div>
 </template>
 <script>
+/**
+ * TODO Add request to get blog pilihan
+ * 
+ */
+import EmptyContent from '../../dummy/EmptyContent.vue'
+import BlogItemNumber from '../item/BlogItemNumber.vue'
 export default {
-	
+	components: { BlogItemNumber, EmptyContent },
+	props: {
+		max: {
+			type: Number,
+			default: 4
+		}
+	},
+	data() {
+		return {
+			items: [
+				{
+					id: 1,
+					title: 'Blog Pilihan 1',
+					image: 'https://picsum.photos/id/1/200/200',
+					description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+					date: '12/12/2019',
+				},
+				{
+					id: 2,
+					title: 'Blog Pilihan 2',
+					image: 'https://picsum.photos/id/1/200/200',
+					description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+					date: '12/12/2019',
+				},
+				{
+					id: 3,
+					title: 'Blog Pilihan 3',
+					image: 'https://picsum.photos/id/1/200/200',
+					description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+					date: '12/12/2019',
+				},
+				{
+					id: 4,
+					title: 'Blog Pilihan 3',
+					image: 'https://picsum.photos/id/1/200/200',
+					description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+					date: '12/12/2019',
+				}
+			],
+			loading: false,
+		}
+	},
 }
 </script>
 <style lang="scss" scoped>
 	.d-grid-pilihan-blog{
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
 		grid-gap: 1rem;
 		margin-bottom: 1rem;
 	}
