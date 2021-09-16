@@ -3,7 +3,9 @@
 		<div class="d-flex">
 			<div class="px-3">
 				<div class="flex-middle">
-					<v-icon>mdi-pin-outline</v-icon>
+					<v-badge dot>
+						<v-icon>mdi-pin-outline</v-icon>
+					</v-badge>
 				</div>
 			</div>
 			<v-subheader class="font-weight-bold text-uppercase">
