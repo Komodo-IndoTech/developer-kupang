@@ -17,63 +17,17 @@
 			</v-card>
 		</div>
 		<template v-for="(item, i) in items">
-			<v-card :key="item.id" 
-				rounded="0" 
-				flat 
-				class="border-bottom"
-				v-intersect="onIntersect" 
-				:id="`event-${item.id}`" @click="pushItem()"
-				:data-id="item.id">
-				<v-card-text>
-					<div class="d-flex">
-						<div class="pr-3 w-100" style="max-width: 100px">
-							<div class="text-uppercase font-weight-regular">
-								Senin
-							</div>
-							<div class="d-flex">
-								<span class="text-h4 font-weight-bold pr-3" style="letter-spacing: -.25rem!important">
-									10
-								</span>
-								<div class="pb-1">
-									<span class="d-flex align-end fill-height">
-										Sep.
-									</span>
-								</div>
-							</div>
-						</div>
-						<div>
-							<div class="flex-middle">
-								<div>
-									<div class="d-flex">
-										<div>
-											<div class="text-h6 mb-3 font-weight-regular" style="line-height: 1.5rem">
-												{{ item.title }}
-											</div>
-											<div>
-												Lorem ipsum dolor sit amet consectetur adipisicing elit.
-											</div>
-										</div>
-										<div class="pl-5">
-											<div class="flex-middle">
-												<v-icon small>mdi-arrow-right</v-icon>
-											</div>
-										</div>
-									</div>
-									<!-- <div v-if="item.image" class="py-5">
-										<v-img :src="item.image" class="shadow-md rounded-lg" height="300"></v-img>
-									</div> -->
-								</div>
-							</div>
-						</div>
-					</div>
-				</v-card-text>
-			</v-card>
+			<event-item :value="item" 
+				:key="item.id"
+				v-intersect="onIntersect"/>
 			<v-divider :key="`divider-${item.id}`"></v-divider>
 		</template>
 	</div>
 </template>
 <script>
+import EventItem from '../item/EventItem.vue'
 export default {
+  components: { EventItem },
 	data() {
 		return {
 			firstItemId: 0,
