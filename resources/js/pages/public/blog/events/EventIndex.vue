@@ -1,10 +1,12 @@
 <template>
 	<div>
-		<div class="pa-5">
+		<div class="py-5">
 			<div class="d-grid-blog w-100" style="max-width: 1024px">
 				<list-event-public @update-image="updateImage($event)"/>
 				<div class="pa-4 sidebar">
-					<date-filter-event style="max-width: 440px" class="mx-auto"/>
+					<div class="d-flex">
+						<date-filter-event class="mx-auto" style="max-width: 440px"/>
+					</div>
 					<div v-if="image" class="sticky-top py-5" :style="{ top: `${$vuetify.application.top}px` }">
 						<v-scroll-y-transition mode="out-in">
 							<v-img :src="image" :key="image" max-width="100%" class="rounded-xl"></v-img>
@@ -78,7 +80,7 @@ export default {
 
 		padding: 20px 0px;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   		// grid-auto-flow: column;
 		// overflow-x: auto;
 		grid-gap: 20px;
@@ -88,7 +90,7 @@ export default {
 			}
 		}
 	}
-	@media screen and (max-width: 660px) {
+	@media screen and (max-width: 880px) {
 		.row-1-sm {
 			grid-row-start: 1;
 		}

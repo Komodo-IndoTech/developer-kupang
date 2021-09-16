@@ -26,15 +26,15 @@
 				:data-id="item.id">
 				<v-card-text>
 					<div class="d-flex">
-						<div class="pr-10">
-							<div class="text-h6 text-uppercase font-weight-regular">
+						<div class="pr-3 w-100" style="max-width: 100px">
+							<div class="text-uppercase font-weight-regular">
 								Senin
 							</div>
 							<div class="d-flex">
-								<span class="text-h3 font-weight-bold pr-3" style="letter-spacing: -.25rem!important">
+								<span class="text-h4 font-weight-bold pr-3" style="letter-spacing: -.25rem!important">
 									10
 								</span>
-								<div>
+								<div class="pb-1">
 									<span class="d-flex align-end fill-height">
 										Sep.
 									</span>
@@ -46,16 +46,16 @@
 								<div>
 									<div class="d-flex">
 										<div>
-											<div class="text-h6 mb-3">
+											<div class="text-h6 mb-3 font-weight-regular" style="line-height: 1.5rem">
 												{{ item.title }}
 											</div>
 											<div>
-												Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit earum animi ratione! Iste illum ea dolorem iusto dicta eum soluta, laudantium distinctio natus quisquam nemo ratione ad iure, vitae quia.
+												Lorem ipsum dolor sit amet consectetur adipisicing elit.
 											</div>
 										</div>
 										<div class="pl-5">
 											<div class="flex-middle">
-												<v-icon>mdi-arrow-right</v-icon>
+												<v-icon small>mdi-arrow-right</v-icon>
 											</div>
 										</div>
 									</div>
