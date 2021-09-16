@@ -23,12 +23,16 @@
 					</v-card>
 				</div>
 			</v-scale-transition>
+			<!-- Minggu dalam tahun -->
 			<v-scale-transition leave-absolute group tag="div" class="d-grid pa-2" mode="out-in">
 				<div v-for="item in items_week" :key="item.week">
 					<menu-tooltip :label="`Minggu ke-${item.week}`" :icons_count="1">
-						<v-card rounded="pill" flat class="item-hari noselect" :color="item.time == selected ? 'indigo lighten-3' : null" :dark="item.time == selected" @click="selectDate(item)">
-							<div class="d-flex flex-column justify-center fill-height py-4">
-								<v-card-text class="text-center text-h6 py-0 my-0" :class="[  ]">
+						<v-card rounded="pill" flat class="item-hari noselect" 
+							:color="item.time == selected ? 'indigo lighten-5' : null" 
+							@click="selectDate(item)"
+							style="height: 40px; width: 40px">
+							<div class="d-flex flex-column justify-center fill-height">
+								<v-card-text class="text-center pa-0 my-0" :class="[  ]">
 									{{ item.week }}
 								</v-card-text>
 							</div>
@@ -77,6 +81,10 @@ export default {
 			type: Number,
 			default: 3
 		},
+		week_range: {
+			type: Number,
+			default: 9
+		},
 	},
 	data(){
 		return {
@@ -99,6 +107,9 @@ export default {
 		},
 		midrange_month(){
 			return parseInt(this.month_range / 2)
+		},
+		midrange_week(){
+			return parseInt(this.week_range / 2)
 		},
 		month(){
 			/**
@@ -139,9 +150,9 @@ export default {
 		items_week(){
 			let items = []
 			let selected = moment(this.selected).locale('id-ID')
-			let first_item = selected.subtract(this.midrange + 1, 'week')
+			let first_item = selected.subtract(this.midrange_week + 1, 'week')
 			let item = first_item
-			for(let i = 0; i < this.range; i++){
+			for(let i = 0; i < this.week_range; i++){
 				item.add(1, 'week')
 				item.locale('id-ID')
 				items.push({
@@ -197,7 +208,7 @@ export default {
 	},
 	created(){
 		this.selected = Date.now()
-		window.m = moment
+		// window.m = moment
 	}
 }
 </script>

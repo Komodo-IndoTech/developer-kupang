@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="d-flex mb-5 justify-center">
-			<v-card class="pa-3" link rounded="lg" flat color="primary lighten-5" @click="unshiftItem()">
+			<v-card class="pa-3" link rounded="xl" flat color="primary lighten-5" @click="unshiftItem()">
 				<v-card-text>
 					<div class="d-flex">
 						<div class="pr-4">
