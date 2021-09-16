@@ -32,7 +32,6 @@ export default {
 	},
 	methods: {
 		updateImage(image) {
-			console.log(image);
 			if(image)
 				this.image = image
 		}
@@ -44,40 +43,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 	.d-grid-blog {
-		
-		// show scrollbar when mouse hover
-		&::-webkit-scrollbar {
-			width: 3px;
-			height: 3px;
-		}
-
-		/* Track */
-		&::-webkit-scrollbar-track {
-			background: #f1f1f1;
-			visibility: hidden;
-		}
-
-		/* Handle */
-		&::-webkit-scrollbar-thumb {
-			background: #888;
-			visibility: hidden;
-		}
-
-		/* Handle on hover */
-		&::-webkit-scrollbar-thumb:hover {
-			background: #555;
-		}
-
-		&:hover{
-			&::-webkit-scrollbar-track {
-				visibility: visible;
-			}
-			&::-webkit-scrollbar-thumb {
-				visibility: visible;
-			}
-		}
-
-
 		padding: 20px 0px;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

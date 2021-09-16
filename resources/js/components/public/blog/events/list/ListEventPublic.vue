@@ -81,6 +81,10 @@ export default {
 
 			],
 			intersects: [],
+			scroller: {
+				y: 0,
+				x: 0,
+			}
 		}
 	},
 	computed: {
@@ -115,14 +119,19 @@ export default {
 			})
 		},
 		pushItem() {
-			this.items.push({
-				id: this.items.length + 1,
-				title: `Event ke-${this.items.length + 1}`,
-				date: '10 September 2019',
-				time: '10:00',
-				location: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit earum animi ratione! Iste illum ea dolorem iusto dicta eum soluta, laudantium distinctio natus quisquam nemo ratione ad iure, vitae quia.',
-				image: `https://picsum.photos/id/${Math.floor(Math.random() * 1000)}/200/200`
-			})
+			this.loading = true
+			setTimeout(() => {
+				for(let i = 0; i < Math.random() * 4 + 1; i++) 
+					this.items.push({
+						id: this.items.length + 1,
+						title: `Event ke-${this.items.length + 1}`,
+						date: '10 September 2019',
+						time: '10:00',
+						location: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit earum animi ratione! Iste illum ea dolorem iusto dicta eum soluta, laudantium distinctio natus quisquam nemo ratione ad iure, vitae quia.',
+						image: `https://picsum.photos/id/${Math.floor(Math.random() * 1000)}/200/200`
+					})
+				this.loading = false
+			}, Math.random() * 6000 + 1000)
 		},
 		removeItem(index) {
 			this.items.splice(index, 1)
@@ -184,10 +193,31 @@ export default {
 	watch: {
 		intersects(val) {
 			this.$emit('update-image', this.firstItemWithImage?.image || null)
-		}
+		},
+		scroller: {
+			handler(val) {
+				/**
+				 * check if val.y is greater than document height - 100 - window height
+				 * 
+				 */
+				let offsetY = 100;
+				if(!this.loading && val.y >= (document.body.scrollHeight - offsetY - window.innerHeight)) {
+					this.pushItem();
+				}
+			},
+			deep: true,
+		},
 	},
 	created() {
 		this.loadItems()
+		/**
+		 * watch scroll changes event from window then store to this.scroller object
+		 * 
+		 */
+		window.addEventListener('scroll', () => {
+			this.scroller.y = window.pageYOffset || document.documentElement.scrollTop;
+		});
+
 	},
 	mounted() {
 	}
