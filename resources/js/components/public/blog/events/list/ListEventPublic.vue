@@ -22,12 +22,19 @@
 				v-intersect="onIntersect"/>
 			<v-divider :key="`divider-${item.id}`"></v-divider>
 		</template>
+		<template v-if="loading">
+			<template v-for="i in 3">
+				<event-item-placeholder :value="item" :key="i"/>
+				<v-divider :key="`divider-${i}`"></v-divider>
+			</template>
+		</template>
 	</div>
 </template>
 <script>
 import EventItem from '../item/EventItem.vue'
+import EventItemPlaceholder from '../item/EventItemPlaceholder.vue'
 export default {
-  components: { EventItem },
+  components: { EventItem, EventItemPlaceholder },
 	data() {
 		return {
 			firstItemId: 0,
@@ -38,7 +45,8 @@ export default {
 			scroller: {
 				y: 0,
 				x: 0,
-			}
+			},
+			loading: false,
 		}
 	},
 	computed: {
@@ -75,7 +83,7 @@ export default {
 		pushItem() {
 			this.loading = true
 			setTimeout(() => {
-				for(let i = 0; i < Math.random() * 4 + 1; i++) 
+				for(let i = 0; i < 3; i++) 
 					this.items.push({
 						id: this.items.length + 1,
 						title: `Event ke-${this.items.length + 1}`,
@@ -85,7 +93,7 @@ export default {
 						image: `https://picsum.photos/id/${Math.floor(Math.random() * 1000)}/200/200`
 					})
 				this.loading = false
-			}, Math.random() * 6000 + 1000)
+			}, Math.random() * 1000)
 		},
 		removeItem(index) {
 			this.items.splice(index, 1)
