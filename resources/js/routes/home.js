@@ -66,6 +66,14 @@ export default [
 				}
 			},
 			{
+				path: 'event/:tanggal/:id_event',
+				component: BlogInfo,
+				name: 'event.show',
+				meta: {
+					title: '# | by $ | Developer Kupang'
+				}
+			},
+			{
 				path: 'forum',
 				component: PublicForum,
 				children: [

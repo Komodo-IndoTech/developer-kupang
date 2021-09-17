@@ -24,8 +24,8 @@
 		</template>
 		<template v-if="loading">
 			<template v-for="i in 3">
-				<event-item-placeholder :value="item" :key="i"/>
-				<v-divider :key="`divider-${i}`"></v-divider>
+				<event-item-placeholder :key="`placeholder-${i}`"/>
+				<v-divider :key="`divider-placeholder-${i}`"></v-divider>
 			</template>
 		</template>
 	</div>
@@ -50,11 +50,31 @@ export default {
 		}
 	},
 	computed: {
+		intersects_trimed() {
+			let intersects = this.intersects
+			if(intersects.length > 1) {
+				let offset = parseInt(intersects.length/2)
+				intersects = intersects.slice(offset, offset+1)
+			}
+			return intersects
+		},
 		/**
 		 * get items that contains image with already in this.intersects
 		 * 
 		 */
 		itemsWithImage() {
+			let items = new Array(this.intersects.length);
+			this.items.forEach(item => {
+				let index = this.intersects.findIndex(e => `${item.id}` == e)
+				if (index > -1) {
+					items[index] = item
+				}
+			});
+			return items;
+			/**
+			 * @deprecated
+			 * 
+			 */
 			return this.items.filter(item => {
 				return this.intersects.includes(`${item.id}`)
 			})
@@ -155,6 +175,7 @@ export default {
 	watch: {
 		intersects(val) {
 			this.$emit('update-image', this.firstItemWithImage?.image || null)
+			this.$emit('update-active-event', this.firstItemWithImage || null)
 		},
 		scroller: {
 			handler(val) {
@@ -162,7 +183,7 @@ export default {
 				 * check if val.y is greater than document height - 100 - window height
 				 * 
 				 */
-				let offsetY = 100;
+				let offsetY = window.innerHeight / 2;
 				if(!this.loading && val.y >= (document.body.scrollHeight - offsetY - window.innerHeight)) {
 					this.pushItem();
 				}

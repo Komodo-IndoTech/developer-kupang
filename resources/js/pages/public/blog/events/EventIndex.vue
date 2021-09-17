@@ -2,15 +2,15 @@
 	<div>
 		<div class="py-5">
 			<div class="d-grid-blog w-100" style="max-width: 1024px">
-				<list-event-public @update-image="updateImage($event)"/>
+				<div class="px-5">
+					<list-event-public @update-active-event="updateEvent($event)"/>
+				</div>
 				<div class="pa-4 sidebar">
 					<div class="d-flex">
 						<date-filter-event class="mx-auto" style="max-width: 440px"/>
 					</div>
-					<div v-if="image" class="sticky-top py-5" :style="{ top: `${$vuetify.application.top}px` }">
-						<v-scroll-y-transition mode="out-in">
-							<v-img :src="image" :key="image" max-width="100%" class="rounded-xl"></v-img>
-						</v-scroll-y-transition>
+					<div v-if="item" class="sticky-top fill-height" :style="{ top: `${$vuetify.application.top}px`, maxHeight: `calc(100vh - ${$vuetify.application.top}px - ${$vuetify.application.bottom}px)` }">
+						<event-info :item="item"/>
 					</div>
 				</div>
 			</div>			
@@ -22,19 +22,25 @@
 </template>
 <script>
 import DateFilterEvent from '../../../../components/public/blog/events/filters/DateFilterEvent.vue';
+import EventInfo from '../../../../components/public/blog/events/info/EventInfo.vue';
 import ListEventPublic from '../../../../components/public/blog/events/list/ListEventPublic.vue'
 export default {
-  	components: { ListEventPublic, DateFilterEvent },
+  	components: { ListEventPublic, DateFilterEvent, EventInfo },
 	data() {
 		return {
 			image: null,
+			item: null,
 		}
 	},
 	methods: {
 		updateImage(image) {
 			if(image)
 				this.image = image
-		}
+		},
+		updateEvent(item) {
+			if(item)
+				this.item = item
+		},
 	},
 	created(){
 
