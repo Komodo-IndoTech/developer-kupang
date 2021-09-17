@@ -1,6 +1,6 @@
 <template>
 	<div 
-		:style="{minHeight: item.id == 1 ? `calc(100vh - ${$vuetify.application.top}px - ${$vuetify.application.bottom}px - 206px)` : null}"
+		:style="{minHeight: item.id == 1 && $vuetify.breakpoint.width >= 820 ? `calc(100vh - ${$vuetify.application.top}px - ${$vuetify.application.bottom}px - 206px)` : null}"
 		class="d-flex flex-column justify-end"
 		:data-id="item.id">
 		<v-card 
@@ -8,7 +8,9 @@
 			flat 
 			class="border-bottom"
 			v-bind="$attrs"
-			:id="`event-${item.id}`">
+			:id="`event-${item.id}`"
+			link
+			@click="$emit('item-click', item)">
 			<v-card-text>
 				<div class="d-flex">
 					<div class="pr-3 w-100" style="max-width: 100px">
@@ -40,7 +42,7 @@
 									</div>
 									<div class="pl-5">
 										<div class="flex-middle">
-											<v-icon small>mdi-arrow-right</v-icon>
+											<v-icon small :color="active ? 'primary' : null">mdi-{{ active ? 'dots-grid' : 'arrow-right'}}</v-icon>
 										</div>
 									</div>
 								</div>
@@ -65,6 +67,10 @@ export default {
 		value: {
 			type: Object,
 		},
+		active: {
+			type: Boolean,
+			default: false,
+		}
 	},
 	computed: {
 		item: {

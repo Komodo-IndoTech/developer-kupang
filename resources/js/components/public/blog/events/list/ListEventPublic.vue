@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="d-flex mb-5 justify-center">
+		<!-- <div class="d-flex mb-5 justify-center">
 			<v-card class="pa-3" link rounded="xl" flat color="primary lighten-5" @click="unshiftItem()">
 				<v-card-text>
 					<div class="d-flex">
@@ -15,11 +15,13 @@
 					</div>
 				</v-card-text>
 			</v-card>
-		</div>
+		</div> -->
 		<template v-for="(item, i) in items">
 			<event-item :value="item" 
 				:key="item.id"
-				v-intersect="onIntersect"/>
+				v-intersect="onIntersect"
+				@item-click="$emit('update-active-event', item || null)"
+				:active="item.id == active"/>
 			<v-divider :key="`divider-${item.id}`"></v-divider>
 		</template>
 		<template v-if="loading">
@@ -34,7 +36,13 @@
 import EventItem from '../item/EventItem.vue'
 import EventItemPlaceholder from '../item/EventItemPlaceholder.vue'
 export default {
-  components: { EventItem, EventItemPlaceholder },
+  	components: { EventItem, EventItemPlaceholder },
+	props: {
+		active: {
+			type: Number,
+			default: null
+		},
+	},
 	data() {
 		return {
 			firstItemId: 0,
@@ -175,7 +183,8 @@ export default {
 	watch: {
 		intersects(val) {
 			this.$emit('update-image', this.firstItemWithImage?.image || null)
-			this.$emit('update-active-event', this.firstItemWithImage || null)
+			if(this.$vuetify.breakpoint.width >= 820)
+				this.$emit('update-active-event', this.firstItemWithImage || null)
 		},
 		scroller: {
 			handler(val) {

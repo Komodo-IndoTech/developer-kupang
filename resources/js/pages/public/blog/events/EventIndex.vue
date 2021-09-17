@@ -1,16 +1,27 @@
 <template>
 	<div>
-		<div class="py-5">
+		<div class="py-md-5">
 			<div class="d-grid-blog w-100" style="max-width: 1024px">
 				<div class="px-5">
-					<list-event-public @update-active-event="updateEvent($event)"/>
+					<list-event-public 
+						@update-active-event="updateEvent($event)" 
+						:active="item ? item.id : null"/>
 				</div>
 				<div class="pa-4 sidebar">
 					<div class="d-flex">
 						<date-filter-event class="mx-auto" style="max-width: 440px"/>
 					</div>
 					<div v-if="item" class="sticky-top fill-height" :style="{ top: `${$vuetify.application.top}px`, maxHeight: `calc(100vh - ${$vuetify.application.top}px - ${$vuetify.application.bottom}px)` }">
-						<event-info :item="item"/>
+						<template v-if="$vuetify.breakpoint.width >= 820">
+							<event-info :item="item"/>
+						</template>
+						<template v-else>
+							<v-dialog v-model="dialog" overlay-color="black" overlay-opacity=".75" scrollable>
+								<v-card rounded="lg" flat>
+									<event-info :item="item"/>
+								</v-card>
+							</v-dialog>
+						</template>
 					</div>
 				</div>
 			</div>			
@@ -30,6 +41,7 @@ export default {
 		return {
 			image: null,
 			item: null,
+			dialog: false,
 		}
 	},
 	methods: {
@@ -38,8 +50,10 @@ export default {
 				this.image = image
 		},
 		updateEvent(item) {
-			if(item)
+			if(item){
 				this.item = item
+				this.dialog = true
+			}
 		},
 	},
 	created(){

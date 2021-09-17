@@ -1,45 +1,55 @@
 <template>
 	<v-card rounded="xl" flat class="w-100">
 		<div class="" style="position: relative">
-			<v-slide-y-transition tag="div" class="d-grid px-2" mode="out-in">
-				<div :key="year">
-					<v-card rounded="pill" flat class="noselect">
-						<div class="d-flex flex-column justify-center fill-height">
-							<v-card-text class="text-center text-h6 py-0 my-0 text--disabled">
-								{{ year }}
-							</v-card-text>
+			<div class="pa-5 d-flex">
+				<v-spacer></v-spacer>
+				<!-- switch to toggle seeOptions -->
+				<v-switch v-model="seeOptions" hide-details label="Pilihan"/>
+			</div>
+			<v-expand-transition>
+				<div v-if="seeOptions">
+					<v-slide-y-transition tag="div" class="d-grid px-2" mode="out-in">
+						<div :key="year">
+							<v-card rounded="pill" flat class="noselect">
+								<div class="d-flex flex-column justify-center fill-height">
+									<v-card-text class="text-center text-h6 py-0 my-0 text--disabled">
+										{{ year }}
+									</v-card-text>
+								</div>
+							</v-card>
 						</div>
-					</v-card>
-				</div>
-			</v-slide-y-transition>
-			<v-scale-transition leave-absolute group tag="div" class="d-grid pa-2" mode="out-in">
-				<div v-for="item in items_month" :key="item.month">
-					<v-card rounded="pill" flat class="noselect" @click="selectDate(item)">
-						<div class="d-flex flex-column justify-center fill-height py-4">
-							<v-card-text class="text-center text-h5 font-weight-black py-0 my-0" :class="[ item.time == selected ? 'indigo--text text--lighten-2' : 'grey--text text--lighten-3' ]">
-								{{ item.month }}
-							</v-card-text>
+					</v-slide-y-transition>
+					<v-scale-transition leave-absolute group tag="div" class="d-grid pa-2" mode="out-in">
+						<div v-for="item in items_month" :key="item.month">
+							<v-card rounded="pill" flat class="noselect" @click="selectDate(item)">
+								<div class="d-flex flex-column justify-center fill-height py-4">
+									<v-card-text class="text-center text-h5 font-weight-black py-0 my-0" :class="[ item.time == selected ? 'indigo--text text--lighten-2' : 'grey--text text--lighten-3' ]">
+										{{ item.month }}
+									</v-card-text>
+								</div>
+							</v-card>
 						</div>
-					</v-card>
+					</v-scale-transition>
+					<!-- Minggu dalam tahun -->
+					<v-scale-transition leave-absolute group tag="div" class="d-grid pa-2" mode="out-in">
+						<div v-for="item in items_week" :key="item.week">
+							<menu-tooltip :label="`Minggu ke-${item.week}`" :icons_count="1">
+								<v-card rounded="pill" flat class="item-hari noselect" 
+									:color="item.time == selected ? 'indigo lighten-5' : null" 
+									@click="selectDate(item)"
+									style="height: 40px; width: 40px">
+									<div class="d-flex flex-column justify-center fill-height">
+										<v-card-text class="text-center pa-0 my-0" :class="[  ]">
+											{{ item.week }}
+										</v-card-text>
+									</div>
+								</v-card>
+							</menu-tooltip>
+						</div>
+					</v-scale-transition>
 				</div>
-			</v-scale-transition>
-			<!-- Minggu dalam tahun -->
-			<v-scale-transition leave-absolute group tag="div" class="d-grid pa-2" mode="out-in">
-				<div v-for="item in items_week" :key="item.week">
-					<menu-tooltip :label="`Minggu ke-${item.week}`" :icons_count="1">
-						<v-card rounded="pill" flat class="item-hari noselect" 
-							:color="item.time == selected ? 'indigo lighten-5' : null" 
-							@click="selectDate(item)"
-							style="height: 40px; width: 40px">
-							<div class="d-flex flex-column justify-center fill-height">
-								<v-card-text class="text-center pa-0 my-0" :class="[  ]">
-									{{ item.week }}
-								</v-card-text>
-							</div>
-						</v-card>
-					</menu-tooltip>
-				</div>
-			</v-scale-transition>
+			</v-expand-transition>
+
 			<v-scale-transition leave-absolute group tag="div" class="d-grid pa-2" mode="out-in">
 				<div v-for="item in items" :key="item.date">
 					<v-card rounded="pill" flat class="item-hari noselect" :color="item.time == selected ? 'indigo' : null" :dark="item.time == selected" @click="selectDate(item)">
@@ -97,6 +107,7 @@ export default {
 				{ value: 'sabtu', label: 'Sabtu', mingguan: true, weekday: 1, month: 'Agu', date: '07'},
 				{ value: 'minggu', label: 'Minggu', mingguan: true, weekday: 1, month: 'Agu', date: '08', libur: true},
 			],
+			seeOptions: false,
 			selected: 0,
 			handler: null
 		}
