@@ -50,23 +50,33 @@
 				</div>
 			</v-expand-transition>
 
-			<v-scale-transition leave-absolute group tag="div" class="d-grid pa-2" mode="out-in">
-				<div v-for="item in items" :key="item.date">
-					<v-card rounded="pill" flat class="item-hari noselect" :color="item.time == selected ? 'indigo' : null" :dark="item.time == selected" @click="selectDate(item)">
-						<div class="d-flex flex-column justify-center fill-height py-5">
-							<v-card-text class="text-center text-h6 py-0" :class="[ item.libur != null && item.libur ? 'error--text' : null ]">
-								{{ item.date }}
-							</v-card-text>
-							<v-card-text class="py-0 text-center text-truncate" :class="[ item.libur != null && item.libur && item.time != selected ? 'text--disabled' : null ]">
-								{{ item.label }}
-							</v-card-text>
-							<!-- <v-card-text class="text-center py-0" :class="[ item.libur != null && item.libur && item.time != selected ? 'text--disabled' : null ]">
-								{{ item.month }}
-							</v-card-text> -->
-						</div>
-					</v-card>
-				</div>
-			</v-scale-transition>
+			<div v-touch="{
+					move: onMoveTouchDate,
+					start: onStartTouchDate,
+					end: onEndTouchDate,
+					left: onLeftTouchDate,
+					right: onRightTouchDate,
+					//up: onUpTouchDate,
+					//down: onDownTouchDate,
+				}">
+				<v-scale-transition leave-absolute group tag="div" class="d-grid pa-2" mode="out-in">
+					<div v-for="item in items" :key="item.date">
+						<v-card rounded="pill" flat class="item-hari noselect" :color="item.time == selected ? 'indigo' : null" :dark="item.time == selected" @click="selectDate(item)">
+							<div class="d-flex flex-column justify-center fill-height py-5">
+								<v-card-text class="text-center text-h6 py-0" :class="[ item.libur != null && item.libur ? 'error--text' : null ]">
+									{{ item.date }}
+								</v-card-text>
+								<v-card-text class="py-0 text-center text-truncate" :class="[ item.libur != null && item.libur && item.time != selected ? 'text--disabled' : null ]">
+									{{ item.label }}
+								</v-card-text>
+								<!-- <v-card-text class="text-center py-0" :class="[ item.libur != null && item.libur && item.time != selected ? 'text--disabled' : null ]">
+									{{ item.month }}
+								</v-card-text> -->
+							</div>
+						</v-card>
+					</div>
+				</v-scale-transition>
+			</div>
 			<div style="position: absolute; top: 0px; right: 0px; width: 4rem; height: 100%; 
 				background: linear-gradient(to left, #fff, transparent); pointer-events: none">
 			</div>
@@ -109,7 +119,8 @@ export default {
 			],
 			seeOptions: false,
 			selected: 0,
-			handler: null
+			handler: null,
+			distanceX: 0,
 		}
 	},
 	computed: {
@@ -194,7 +205,7 @@ export default {
 	},
 	methods: {
 		...mapMutations({
-			selectDay: 'jadwal/options/SET_HARI'
+			// selectDay: 'jadwal/options/SET_HARI'
 		}),
 		nextDate(add = 1){
 			this.selected = moment(this.selected).add(add, 'day').valueOf()
@@ -205,6 +216,39 @@ export default {
 		selectDate(date){
 			this.selected = date.time
 		},
+		onMoveTouchDate(e){
+			// console.log("move", e);
+			// let distance = e.touchmoveX - e.touchstartX
+            // if(distance >= 0){
+            //     this.distanceX = distance
+			// 	if(this.distanceX % 10 == 0){
+			// 		this.prevDate()
+			// 	}
+			// } else {
+            //     this.distanceX = distance
+			// 	if(this.distanceX % 10 == 0){
+			// 		this.nextDate()
+			// 	}
+			// }
+		},
+		onEndTouchDate(event){
+			// console.log("end", event);
+
+            // this.$nextTick(()=>{
+            //     this.distanceY = 0
+            // })
+		},
+		onStartTouchDate(event){
+			// console.log("start", event);
+		},
+		onLeftTouchDate(event){
+			// console.log("left", event);
+			this.nextDate()
+		},
+		onRightTouchDate(event){
+			// console.log("right", event);
+			this.prevDate()
+		},
 	},
 	watch: {
 		selected(val){
@@ -213,7 +257,7 @@ export default {
 			this.handler = setTimeout(e => {
 				let day = moment(val).locale('id-ID').format('dddd')
 				this.$emit('selected', day)
-				this.selectDay(day)
+				// this.selectDay(day)
 			}, 800)
 		}
 	},
