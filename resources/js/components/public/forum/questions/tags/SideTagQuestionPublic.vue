@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<v-sub-header class="font-weight-regular">
+		<v-subheader class="font-weight-regular">
 			Tag
-		</v-sub-header>
+		</v-subheader>
 		<div class="pt-6 d-flex flex-column">
 			<div v-for="item in items" :key="item.id" class="d-flex mb-2">
 				<v-chip color="blue lighten-5" class="mr-2 rounded-lg" style="border-color: rgba(0,0,0,.15); text-transform: none; font-weight: normal; font-size: 80%">

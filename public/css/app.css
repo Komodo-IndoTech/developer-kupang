@@ -529,7 +529,7 @@
 }
 
 .v-application .list-active {
-  background: linear-gradient(45deg, var(--v-primary-base), #7986CB);
+  background: linear-gradient(45deg, var(--v-primary-base), #9fa8da);
   color: #fff !important;
   border-radius: 1rem !important;
   padding-left: 1.5rem !important;
@@ -567,4 +567,8 @@
   user-select: none;
   /* Non-prefixed version, currently
   supported by Chrome, Edge, Opera and Firefox */
+}
+
+.transition-sm {
+  transition: all 0.2s ease;
 }

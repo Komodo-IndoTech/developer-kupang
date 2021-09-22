@@ -84,7 +84,7 @@
 
 .v-application {
 	.list-active{
-		background: linear-gradient(45deg, var(--v-primary-base), #7986CB);
+		background: linear-gradient(45deg, var(--v-primary-base), #9fa8da);
 		// --v-primary-base: #fff;
 		color: #fff!important;
 		border-radius: 1rem!important;
@@ -126,4 +126,8 @@
 	// .v-main{
 	// 	overflow-x: hidden;
 	// }
+}
+
+.transition-sm{
+	transition: all .2s ease;
 }

@@ -1,10 +1,10 @@
 <template>
 	<div>
-		<v-sub-header class="font-weight-bold text-uppercase">
+		<v-subheader class="font-weight-bold text-uppercase">
 			<small>
 				Kategori Pilihan
 			</small>
-		</v-sub-header>
+		</v-subheader>
 		<div class="pt-6">
 			<v-btn outlined v-for="item in items" :key="item.id" class="mr-2 mb-2" style="border-color: rgba(0,0,0,.15); text-transform: none; font-weight: normal; font-size: 80%">
 				{{ item.name }}

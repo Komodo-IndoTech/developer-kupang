@@ -3,29 +3,39 @@
 		<div class="d-grid-blog">
 			<div class="colspan-3">
 				<v-container class="pb-4 pt-8">
-					<div class="px-4">
-						<div class="d-flex justify-space-between mb-3 flex-wrap">
-							<div>
-								<div class="text-h5 flex-middle">
-									Semua Pertanyaan
-								</div>
-							</div>
-							<div>
-								<div class="content-middle">
-									<v-btn
-										color="blue darken-1"
-										dark
-										class="text-capitalize font-weight-regular py-5"
-										elevation="0">
-										Buat Pertanyaan
-									</v-btn>
-								</div>
-							</div>
+					<div class="px-4 px-lg-0">
+						<div class="mb-10">
+							<v-card flat color="primary lighten-5" rounded="xl">
+								<v-card-text class="d-flex justify-space-between flex-wrap">
+									<div>
+										<div class="text-h6 flex-middle font-weight-black primary--text text--lighten-2">
+											Semua Topik
+										</div>
+									</div>
+									<div>
+										<div class="content-middle">
+											<v-hover v-slot="{hover}">
+												<v-btn
+													color="primary"
+													dark
+													class="text-capitalize font-weight-regular py-6 rounded-xl shadow-md transition-sm">
+													<v-icon small :left="hover">mdi-plus</v-icon>
+													<v-expand-x-transition>
+														<span v-if="hover">
+															Buat Topik Baru
+														</span>
+													</v-expand-x-transition>
+												</v-btn>
+											</v-hover>
+										</div>
+									</div>
+								</v-card-text>
+							</v-card>
 						</div>
 						<div class="d-flex justify-space-between mt-5 flex-wrap">
 							<div class="py-3">
-								<div class="flex-middle align-start">
-									{{ 1000 | number }} Pertanyaan minggu ini
+								<div class="flex-middle align-start text--disabled">
+									{{ 1000 | number }} Topik minggu ini
 								</div>
 							</div>
 							<div>
@@ -170,7 +180,7 @@
 					</div>
 				</v-expand-transition>
 				<v-divider></v-divider>
-				<v-container fluid>
+				<v-container fluid style="max-width: 800px">
 					<list-question-public/>
 				</v-container>
 			</div>
@@ -178,11 +188,6 @@
 				<side-tag-question-public class="sticky-top" :style="{ top: `${$vuetify.application.top}px` }"/>
 			</div>
 		</div>
-		<v-card flat rounded="0" dark>
-			<v-card-text class="pa-lg-10">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam autem nemo odio dignissimos eaque quas maxime repellat nihil, voluptatibus minus molestias totam modi obcaecati dolore officiis, esse aliquid voluptate distinctio?
-			</v-card-text>
-		</v-card>
 	</div>
 </template>
 <script>

@@ -7,7 +7,7 @@
 
 @section('content')
 	<v-app>
-		<v-navigation-drawer app mini floating class="indigo lighten-5">
+		<v-navigation-drawer app mini floating class="indigo lighten-4">
 			<div class="d-flex flex-column fill-height">
 				<v-spacer></v-spacer>
 				<v-list nav class="px-8">
