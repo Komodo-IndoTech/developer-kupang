@@ -1,7 +1,7 @@
 <template>
 	<v-app-bar class="rounded-pill ma-3 shadow-lg" bottom fixed floating :color="'transparent-light'" 
 		style="right: unset"
-		:style="{ left: `${$vuetify.application.left}px` }">
+		:style="{ left: `${$vuetify.application.left}px`, bottom: `${$vuetify.application.bottom}px` }">
 		<div class="pr-2">
 			<div class="flex-middle">
 				<v-avatar size="32" color="grey lighten-4">
